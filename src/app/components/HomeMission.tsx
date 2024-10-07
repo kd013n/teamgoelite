@@ -1,6 +1,3 @@
-import Image from "next/image";
-import HomeMissionBanner from "../../../public/assets/images/Home/HomeMissionBanner.jpg";
-
 const links = [
   { name: "Open roles", href: "#" },
   { name: "Internship program", href: "#" },
