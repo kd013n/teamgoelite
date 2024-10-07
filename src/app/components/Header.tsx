@@ -4,8 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import styles from "../page.module.scss";
-
 import TGELogo from "../../../public/assets/images/logo.png";
 
 import {
