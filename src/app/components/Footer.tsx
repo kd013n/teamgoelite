@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import styles from "../page.module.scss";
+
 import TGELogo from "../../../public/assets/images/logo.png";
 
 export default function Footer() {
   return (
     <>
-      <footer className="bg-white text-gray-900 footer text-base-content p-10">
+      <footer className={styles.footerTop}>
         <nav>
           <h6 className="footer-title">Careers</h6>
           <Link href="/" className="link link-hover">
@@ -82,7 +84,7 @@ export default function Footer() {
           <h6 className="footer-title">Testimonials</h6>
         </nav>
       </footer>
-      <footer className="bg-white text-gray-900 footer text-base-content border-base-300 border-t px-10 py-4">
+      <footer className={styles.footerBottom}>
         <aside className="grid-flow-col items-center">
           <Image
             src={TGELogo}

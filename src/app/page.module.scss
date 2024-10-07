@@ -1,8 +1,18 @@
 .headerstyles {
-  background-color: #ffffffb7 !important;
-  color: aqua;
+  @apply sticky top-0 z-10;
+  background-color: #ffffff !important;
 }
 
-.footerstyles {
+.footerTop {
+  @apply footer text-base-content p-10;
   background-color: #f1f1f1 !important;
+  color: #111d32;
+}
+
+.footerBottom {
+  @apply footer text-base-content border-base-100 border-t px-10 py-4;
+  background-color: #f1f1f1 !important;
+  color: #111d32;
+  --tw-border-opacity: 1;
+  border-color: #676d79;
 }
