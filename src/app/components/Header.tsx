@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import styles from "../page.module.scss";
+
 import TGELogo from "../../../public/assets/images/logo.png";
 
 import {
@@ -11,62 +13,94 @@ import {
   DialogPanel,
   Disclosure,
   DisclosureButton,
-  DisclosurePanel,
   Popover,
   PopoverButton,
   PopoverGroup,
   PopoverPanel,
 } from "@headlessui/react";
 import {
-  ArrowPathIcon,
+  AcademicCapIcon,
+  ArrowTrendingUpIcon,
+  BanknotesIcon,
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
+  BriefcaseIcon,
+  CreditCardIcon,
+  GlobeAsiaAustraliaIcon,
+  HeartIcon,
+  HomeIcon,
+  PlusCircleIcon,
+  ShoppingBagIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+
+const careers = [
+  {
+    name: "Career Programs",
+    description:
+      "Launch your insurance career with comprehensive training at Team Go Elite",
+    href: "/",
+    icon: BriefcaseIcon,
+  },
+  {
+    name: "Travels and Incentives",
+    description:
+      "Earn exclusive travel rewards and bonuses while achieving your professional goals",
+    href: "/",
+    icon: GlobeAsiaAustraliaIcon,
+  },
+  {
+    name: "High-Income Earners",
+    description:
+      "Discover strategies to maximize your earnings inspired by the success stories of top Team Go Elite performers",
+    href: "/",
+    icon: ArrowTrendingUpIcon,
+  },
+];
 
 const products = [
   {
-    name: "Analytics",
+    name: "Health",
     description: "Get a better understanding of your traffic",
     href: "#",
-    icon: ChartPieIcon,
+    icon: HeartIcon,
   },
   {
-    name: "Engagement",
+    name: "Income Protection",
     description: "Speak directly to your customers",
     href: "#",
-    icon: CursorArrowRaysIcon,
+    icon: CreditCardIcon,
   },
   {
-    name: "Security",
+    name: "Lifestyle Protection",
     description: "Your customers’ data will be safe and secure",
     href: "#",
-    icon: FingerPrintIcon,
+    icon: ShoppingBagIcon,
   },
   {
-    name: "Integrations",
+    name: "Education",
     description: "Connect with third-party tools",
     href: "#",
-    icon: SquaresPlusIcon,
+    icon: AcademicCapIcon,
   },
   {
-    name: "Automations",
+    name: "Retirement",
     description: "Build strategic funnels that will convert",
     href: "#",
-    icon: ArrowPathIcon,
+    icon: HomeIcon,
   },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
+  {
+    name: "Savings and Investment",
+    description: "Build strategic funnels that will convert",
+    href: "#",
+    icon: BanknotesIcon,
+  },
+  {
+    name: "General Insurance",
+    description: "Build strategic funnels that will convert",
+    href: "#",
+    icon: PlusCircleIcon,
+  },
 ];
 
 export default function Header() {
@@ -79,7 +113,7 @@ export default function Header() {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <Link href="#" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <Image
               width={0}
@@ -115,7 +149,7 @@ export default function Header() {
               className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
             >
               <div className="p-4">
-                {products.map((item) => (
+                {careers.map((item) => (
                   <div
                     key={item.name}
                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
@@ -139,27 +173,12 @@ export default function Header() {
                   </div>
                 ))}
               </div>
-              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                {callsToAction.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                  >
-                    <item.icon
-                      aria-hidden="true"
-                      className="h-5 w-5 flex-none text-gray-400"
-                    />
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
             </PopoverPanel>
           </Popover>
 
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              Product
+              Products
               <ChevronDownIcon
                 aria-hidden="true"
                 className="h-5 w-5 flex-none text-gray-400"
@@ -195,46 +214,32 @@ export default function Header() {
                   </div>
                 ))}
               </div>
-              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                {callsToAction.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                  >
-                    <item.icon
-                      aria-hidden="true"
-                      className="h-5 w-5 flex-none text-gray-400"
-                    />
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
             </PopoverPanel>
           </Popover>
 
           <Link
-            href="#"
+            href="/"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
-            Features
+            Testimonials
           </Link>
+
           <Link
-            href="#"
+            href="/"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
-            Marketplace
-          </Link>
-          <Link
-            href="#"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Company
+            About TGE
           </Link>
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-x-12">
           <Link
-            href="#"
+            href="/"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
+            Support
+          </Link>
+          <Link
+            href="/"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Log in
@@ -249,7 +254,7 @@ export default function Header() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <Image
                 width={0}
@@ -279,33 +284,21 @@ export default function Header() {
                       className="h-5 w-5 flex-none group-data-[open]:rotate-180"
                     />
                   </DisclosureButton>
-                  <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products, ...callsToAction].map((item) => (
-                      <DisclosureButton
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      >
-                        {item.name}
-                      </DisclosureButton>
-                    ))}
-                  </DisclosurePanel>
                 </Disclosure>
                 <Link
-                  href="#"
+                  href="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Features
                 </Link>
                 <Link
-                  href="#"
+                  href="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Marketplace
                 </Link>
                 <Link
-                  href="#"
+                  href="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Company
@@ -313,7 +306,7 @@ export default function Header() {
               </div>
               <div className="py-6">
                 <Link
-                  href="#"
+                  href="/"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log in
