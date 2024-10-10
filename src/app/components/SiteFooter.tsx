@@ -2,10 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "../page.module.scss";
+import TGELogo from "../../public/logo.png";
 
-import TGELogo from "../../../public/assets/images/logo.png";
-
-export default function Footer() {
+export default function SiteFooter() {
   return (
     <>
       <footer className={styles.footerTop}>

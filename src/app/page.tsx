@@ -1,7 +1,9 @@
-import Header from "./components/Header";
+import Header from "./components/SiteHeader";
 import HomeBanner from "./components/HomeBanner";
-import Footer from "./components/Footer";
+import SiteFooter from "./components/SiteFooter";
 import HomeMission from "./components/HomeMission";
+import HomeNavigation from "./components/HomeNavigation";
+import HomeTagline from "./components/HomeTagline";
 
 export default function Home() {
   return (
@@ -9,7 +11,9 @@ export default function Home() {
       <Header />
       <HomeBanner />
       <HomeMission />
-      <Footer />
+      <HomeNavigation />
+      <HomeTagline />
+      <SiteFooter />
     </>
   );
 }

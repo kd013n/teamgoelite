@@ -21,8 +21,8 @@ export default function HomeBanner() {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              Announcing our next round of funding.{" "}
-              <Link href="#" className="font-semibold text-indigo-600">
+              We&apos;ve updated our site.{" "}
+              <Link href="#" className="font-semibold text-red-500">
                 <span aria-hidden="true" className="absolute inset-0" />
                 Read more <span aria-hidden="true">&rarr;</span>
               </Link>
@@ -41,16 +41,16 @@ export default function HomeBanner() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
-                href="#"
+                href="#HomeNavigation"
                 className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Get started
+                Discover TGE
               </Link>
               <Link
-                href="#"
+                href="#HomeMission"
                 className="text-sm font-semibold leading-6 text-gray-900"
               >
-                Learn more <span aria-hidden="true">→</span>
+                Our Ethos <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>

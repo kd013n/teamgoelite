@@ -1,12 +1,8 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"name": "teamgoelite",
-			"path": "teamgoelite"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {}
 }

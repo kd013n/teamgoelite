@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={raleway.className}>
-      <body>{children}</body>
+      <body className={raleway.className}>{children}</body>
     </html>
   );
 }

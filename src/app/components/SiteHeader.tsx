@@ -5,8 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import styles from "../page.module.scss";
-
-import TGELogo from "../../../public/assets/images/logo.png";
+import TGELogo from "../../public/logo.png";
 
 import {
   Dialog,
@@ -103,7 +102,7 @@ const products = [
   },
 ];
 
-export default function Header() {
+export default function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -134,7 +133,7 @@ export default function Header() {
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+        <PopoverGroup className="hidden lg:flex lg:gap-x-12 drop-shadow-2xl">
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Careers
@@ -152,12 +151,12 @@ export default function Header() {
                 {careers.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-200"
                   >
-                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-200 group-hover:bg-white">
                       <item.icon
                         aria-hidden="true"
-                        className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                        className="h-6 w-6 text-gray-600 group-hover:text-red-500"
                       />
                     </div>
                     <div className="flex-auto">
@@ -193,12 +192,12 @@ export default function Header() {
                 {products.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-200"
                   >
-                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-200 group-hover:bg-white">
                       <item.icon
                         aria-hidden="true"
-                        className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                        className="h-6 w-6 text-gray-600 group-hover:text-red-500"
                       />
                     </div>
                     <div className="flex-auto">
