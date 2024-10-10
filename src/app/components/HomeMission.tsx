@@ -8,7 +8,7 @@ const stats = [
 export default function HomeMission() {
   return (
     <div
-      className="relative isolate overflow-hidden bg-white lg:scroll-mt-56"
+      className="relative isolate overflow-hidden bg-white py-12 pb-36 scroll-mt-24 lg:scroll-mt-56"
       id="HomeMission"
     >
       <div className="mx-auto max-w-7xl sm:px-32">

@@ -5,7 +5,7 @@ import SampleImage from "../../public/images/Home/HomeMissionBanner.jpg";
 const posts = [
   {
     id: 1,
-    title: "Boost your conversion rate",
+    title: "Careers",
     href: "#",
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
@@ -13,7 +13,7 @@ const posts = [
   },
   {
     id: 2,
-    title: "Boost your conversion rate",
+    title: "Products",
     href: "#",
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
@@ -21,7 +21,31 @@ const posts = [
   },
   {
     id: 3,
-    title: "Boost your conversion rate",
+    title: "Testimonials",
+    href: "#",
+    description:
+      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+    imagesrc: SampleImage,
+  },
+  {
+    id: 4,
+    title: "Events",
+    href: "#",
+    description:
+      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+    imagesrc: SampleImage,
+  },
+  {
+    id: 5,
+    title: "About Us",
+    href: "#",
+    description:
+      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+    imagesrc: SampleImage,
+  },
+  {
+    id: 6,
+    title: "Support",
     href: "#",
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
@@ -31,10 +55,7 @@ const posts = [
 
 export default function HomeNavigation() {
   return (
-    <div
-      className="bg-white py-32 sm:py-48 lg:py-56 lg:scroll-mt-32"
-      id="HomeNavigation"
-    >
+    <div className="bg-white py-24 lg:scroll-mt-32" id="HomeNavigation">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto lg:mx-0 text-center">
           <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -44,7 +65,7 @@ export default function HomeNavigation() {
             Learn how to grow your business with our expert advice.
           </p>
         </div>
-        <div className="mx-auto mt-10 grid grid-cols-1 gap-x-8 gap-y-6 lg:mx-auto lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto mt-10 grid grid-cols-1 gap-x-8 gap-y-6 md:gap-y-6 lg:mx-auto lg:max-w-none lg:grid-cols-3">
           {posts.map((post) => (
             <article
               key={post.id}
@@ -54,13 +75,13 @@ export default function HomeNavigation() {
                 <Image src={post.imagesrc} height={0} width={0} alt="Image" />
               </div>
               <div className="group relative">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                <h3 className="mt-2 text-lg font-bold leading-6 text-gray-900 group-hover:text-gray-600">
                   <a href={post.href}>
                     <span className="absolute inset-0" />
                     {post.title}
                   </a>
                 </h3>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                <p className="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">
                   {post.description}
                 </p>
               </div>
