@@ -4,7 +4,7 @@
 }
 
 .footerTop {
-  @apply footer text-base-content p-10;
+  @apply footer text-base-content p-10 xl:px-48;
   background-color: #f1f1f1 !important;
   color: #111d32;
 }

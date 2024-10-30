@@ -35,6 +35,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import SiteHeader from "./SiteHeader";
 
 const careers = [
   {

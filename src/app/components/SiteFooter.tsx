@@ -88,29 +88,33 @@ export default function SiteFooter() {
           </span>
         </nav>
 
-        <nav className="max-w-sm">
+        <nav className="max-w-48">
           <h6 className={styles.footerTopTitle}>Contact Us</h6>
           <Link href="/" className={styles.footerTopLink}>
-            <b>
+            <b className="px-3">
               <FontAwesomeIcon icon={faEnvelope} />
-            </b>{" "}
+            </b>
             info@teamgoelite.com
           </Link>
           <Link href="/" className={styles.footerTopLink}>
-            <b>
+            <b className="px-3">
               <FontAwesomeIcon icon={faPhone} />
-            </b>{" "}
+            </b>
             +63 998 999 6517
           </Link>
           <Link
             href="/https://maps.app.goo.gl/hcGjVByp2RqLRZ118"
             className={styles.footerTopLink}
           >
-            <b>
-              <FontAwesomeIcon icon={faLocationDot} />
-            </b>
-            Wellington Building, G/F & Mezzanine, Padre Burgos Ave, Binondo,
-            Manila, Philippines
+            <div className="flex flex-row">
+              <b className="px-3">
+                <FontAwesomeIcon icon={faLocationDot} />
+              </b>
+              <p>
+                Wellington Building, G/F & Mezzanine, Padre Burgos Ave, Binondo,
+                Manila, Philippines
+              </p>
+            </div>
           </Link>
         </nav>
       </footer>
@@ -130,7 +134,7 @@ export default function SiteFooter() {
           </p>
         </aside>
         <nav className="md:place-self-center md:justify-self-end">
-          <div className="grid grid-flow-col gap-4">
+          <div className="grid grid-flow-col gap-4 text-sm">
             <Link href="/">
               <FontAwesomeIcon
                 icon={faFacebook}

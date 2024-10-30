@@ -32,7 +32,7 @@ export default function HomeBanner() {
             <h1 className="text-balance text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               Empower Your Journey, Secure Your Future
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-md lg:text-lg leading-8 text-gray-600">
               Team Go Elite is dedicated to guiding you towards a successful
               career in the insurance industry. We provide comprehensive
               training, mentorship, and resources to help you achieve financial
