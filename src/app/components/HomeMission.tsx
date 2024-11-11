@@ -8,17 +8,17 @@ const stats = [
 export default function HomeMission() {
   return (
     <div
-      className="relative isolate overflow-hidden bg-white py-12 pb-36 scroll-mt-24 lg:scroll-mt-56"
+      className="relative isolate overflow-hidden bg-accent2 py-36 scroll-mt-24 lg:scroll-mt-56"
       id="HomeMission"
     >
-      <div className="mx-auto max-w-7xl sm:px-32">
+      <div className="mx-auto max-w-7xl px-10 sm:px-32">
         <div className="flex flex-row flex-wrap">
           <div className="basis-full xl:basis-1/2">
             <div className="max-w-4xl text-center text-balance mx-auto">
               <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                 Mission
               </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-700 text-md lg:text-lg">
+              <p className="mt-3 md:mt-6 lg:leading-6 text-lightText text-sm leading-5 lg:text-lg">
                 Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
                 lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
                 fugiat aliqua.
@@ -30,7 +30,7 @@ export default function HomeMission() {
               <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                 Vision
               </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-700 text-md lg:text-lg ">
+              <p className="mt-3 md:mt-6 lg:leading-6 text-lightText text-sm leading-5 lg:text-lg">
                 Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
                 lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
                 fugiat aliqua.

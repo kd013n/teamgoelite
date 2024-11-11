@@ -5,14 +5,27 @@
 :root {
   --background: #f9f9f9;
   --foreground: #111d32;
+  --lightest-text: #d1d5db;
+  --light-text: #4b5563;
+  --mid-text: #2e3745;
+  --dark-text: #111827;
+  --darkest-text: #0f1116;
+  --links: #ef4444;
+  --hover-links: #dc2626;
+  --buttons: #dc2626;
+  --hover-buttons: #b91c1c;
+  --outlines: #94a3b8;
+  --hover-outlines: #64748b;
+  --accent2: #E0E6ED;
+  --accent3: #E3E8F1;
 }
 
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
   :root {
     --background: #111d32;
     --foreground: #f9f9f9;
   }
-}
+}*/
 
 html {
   @apply select-none;
