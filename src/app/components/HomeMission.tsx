@@ -12,30 +12,26 @@ export default function HomeMission() {
       id="HomeMission"
     >
       <div className="mx-auto max-w-7xl px-10 sm:px-32">
-        <div className="flex flex-row flex-wrap">
-          <div className="basis-full xl:basis-1/2">
-            <div className="max-w-4xl text-center text-balance mx-auto">
-              <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Mission
-              </h2>
-              <p className="mt-3 md:mt-6 lg:leading-6 text-lightText text-sm leading-5 lg:text-lg">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat aliqua.
-              </p>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+          <div className="max-w-4xl text-center text-balance mx-auto">
+            <h2 className="text-4xl font-bold tracking-tight text-darkText lg:text-5xl">
+              Mission
+            </h2>
+            <p className="mt-3 md:mt-6 lg:leading-6 text-lightText text-sm leading-5 md:text-lg">
+              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
+              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
+              fugiat aliqua.
+            </p>
           </div>
-          <div className="basis-full xl:basis-1/2 mt-24 xl:mt-0">
-            <div className="max-w-4xl text-center text-balance mx-auto">
-              <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Vision
-              </h2>
-              <p className="mt-3 md:mt-6 lg:leading-6 text-lightText text-sm leading-5 lg:text-lg">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat aliqua.
-              </p>
-            </div>
+          <div className="max-w-4xl text-center text-balance mx-auto">
+            <h2 className="text-4xl font-bold tracking-tight text-darkText lg:text-5xl">
+              Vision
+            </h2>
+            <p className="mt-3 md:mt-6 lg:leading-6 text-lightText text-sm leading-5 md:text-lg">
+              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
+              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
+              fugiat aliqua.
+            </p>
           </div>
         </div>
 

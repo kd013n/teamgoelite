@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import SampleImage from "../../public/images/Home/HomeMissionBanner.jpg";
 
@@ -55,7 +56,7 @@ const posts = [
 
 export default function HomeNavigation() {
   return (
-    <div className="py-24 lg:scroll-mt-32" id="HomeNavigation">
+    <div className="py-36 lg:scroll-mt-32" id="HomeNavigation">
       <div className="relative isolate px-8 lg:px-10">
         <div
           aria-hidden="true"
@@ -79,27 +80,28 @@ export default function HomeNavigation() {
               Learn how to grow your business with our expert advice.
             </p>
           </div>
-          <div className="mx-auto mt-10 grid grid-cols-1 gap-x-3 gap-y-6 md:gap-y-6 md:mx-24 lg:max-w-none sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-10 grid grid-cols-1 gap-x-3 gap-y-8 md:gap-y-12 lg:gap-y-18 md:mx-24 lg:max-w-none sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
-              <article
-                key={post.id}
-                className="flex mx-auto max-w-xl flex-col items-start justify-between p-3"
-              >
-                <div className="flex items-center rounded-xl border-inherit overflow-hidden object-cover mb-6">
-                  <Image src={post.imagesrc} height={0} width={0} alt="Image" />
-                </div>
-                <div className="group relative">
-                  <h3 className="text-lg font-bold leading-3 lg:leading-6 text-darkText group-hover:text-darkestText">
-                    <a href={post.href}>
-                      <span className="absolute inset-0" />
-                      {post.title}
-                    </a>
-                  </h3>
-                  <p className="mt-2 line-clamp-2 text-sm leading-6 text-gray-600">
-                    {post.description}
-                  </p>
-                </div>
-              </article>
+              <Link href={post.href} key={post.id}>
+                <article className="flex mx-auto max-w-xl flex-col items-start justify-between p-3 hover:scale-105 ease-linear duration-100">
+                  <div className="flex items-center rounded-xl border-inherit overflow-hidden object-cover mb-6">
+                    <Image
+                      src={post.imagesrc}
+                      height={0}
+                      width={0}
+                      alt="Image"
+                    />
+                  </div>
+                  <div className="group relative">
+                    <h3 className="text-lg text-center font-bold leading-3 lg:leading-6 text-darkText group-hover:text-darkestText">
+                      <p>{post.title}</p>
+                    </h3>
+                    <p className="mt-2 px-6 line-clamp-2 text-sm text-center leading-6 text-lightText">
+                      {post.description}
+                    </p>
+                  </div>
+                </article>
+              </Link>
             ))}
           </div>
         </div>
