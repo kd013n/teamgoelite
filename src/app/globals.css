@@ -14,10 +14,12 @@
   --hover-links: #dc2626;
   --buttons: #dc2626;
   --hover-buttons: #b91c1c;
-  --outlines: #94a3b8;
+  --outlines: #626468;
   --hover-outlines: #64748b;
-  --accent2: #E0E6ED;
-  --accent3: #E3E8F1;
+  --accent2: #f0eded;
+  --accent3: #e6d8d8;
+  --footer-bg: #e0e0e0;
+  --footer-bg2: #cecece;
 }
 
 /*@media (prefers-color-scheme: dark) {
@@ -30,7 +32,6 @@
 html {
   @apply select-none;
   scroll-behavior: smooth;
-
 }
 
 body {

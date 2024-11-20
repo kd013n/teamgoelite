@@ -73,10 +73,10 @@ export default function HomeNavigation() {
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto lg:mx-0 text-center">
-            <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
               Discover TGE
             </h2>
-            <p className="mt-3 md:mt-5 text-md leading-5 lg:text-lg lg:leading-8 text-gray-600">
+            <p className="mt-3 md:mt-5 text-md leading-5 lg:text-lg lg:leading-8 text-midText">
               Learn how to grow your business with our expert advice.
             </p>
           </div>
@@ -96,7 +96,7 @@ export default function HomeNavigation() {
                     <h3 className="text-lg text-center font-bold leading-3 lg:leading-6 text-darkText group-hover:text-darkestText">
                       <p>{post.title}</p>
                     </h3>
-                    <p className="mt-2 px-6 line-clamp-2 text-sm text-center leading-6 text-lightText">
+                    <p className="mt-2 px-6 line-clamp-2 text-sm text-center leading-6 text-midText">
                       {post.description}
                     </p>
                   </div>
@@ -105,16 +105,43 @@ export default function HomeNavigation() {
             ))}
           </div>
         </div>
+
         <div
           aria-hidden="true"
-          className="absolute bottom-0 right-0 -z-10 transform-gpu overflow-hidden blur-3xl"
+          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 animate-bouncePath1"
         >
           <div
             style={{
               clipPath:
                 "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
             }}
-            className="relative right-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] translate-x-1/2 rotate-[45deg] bg-gradient-to-tr from-[#db5353] to-[#4342a0] opacity-40 sm:right-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#e7a0a0] to-[#7d7adb] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          />
+        </div>
+
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 -top-60 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-90 animate-bouncePath2"
+        >
+          <div
+            style={{
+              clipPath:
+                "polygon(68% 32%, 89% 50%, 80% 10%, 75% 0%, 68% 28%, 45% 76%, 40% 62%, 25% 84%, 10% 44%, 50% 100%, 60% 50%, 25% 90%, 68% 32%)",
+            }}
+            className="relative left-[calc(50%-13rem)] aspect-[900/600] w-[30rem] -translate-x-1/2 rotate-[45deg] bg-gradient-to-tr from-[#e77e75] to-[#76a6d6] opacity-40 sm:left-[calc(50%-25rem)] sm:w-[60rem]"
+          />
+        </div>
+
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 -top-80 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-100 animate-bouncePath3"
+        >
+          <div
+            style={{
+              clipPath:
+                "polygon(50% 0%, 75% 25%, 100% 50%, 75% 75%, 50% 100%, 25% 75%, 0% 50%, 25% 25%)",
+            }}
+            className="relative left-[calc(50%-15rem)] aspect-[800/800] w-[25rem] -translate-x-1/2 rotate-[60deg] bg-gradient-to-tr from-[#94a3f7] to-[#f88585] opacity-50 sm:left-[calc(50%-20rem)] sm:w-[50rem]"
           />
         </div>
       </div>

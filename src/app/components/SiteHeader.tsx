@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import styles from "../page.module.scss";
 import TGELogo from "../../public/logo.png";
 
 import {
@@ -109,7 +108,7 @@ export default function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className={styles.headerstyles}>
+    <header className="sticky top-0 z-10 drop-shadow-md bg-background">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"

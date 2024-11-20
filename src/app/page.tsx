@@ -1,6 +1,6 @@
 import Header from "./components/SiteHeader";
-import HomeBanner from "./components/HomeBanner";
 import SiteFooter from "./components/SiteFooter";
+import HomeBanner from "./components/HomeBanner";
 import HomeMission from "./components/HomeMission";
 import HomeNavigation from "./components/HomeNavigation";
 import HomeTagline from "./components/HomeTagline";
