@@ -17,7 +17,7 @@ export default function HomeMission() {
             <h2 className="text-4xl font-bold tracking-tight text-darkText lg:text-5xl">
               Mission
             </h2>
-            <p className="mt-3 md:mt-6 lg:leading-6 text-midText text-sm leading-5 md:text-lg">
+            <p className="mt-3 md:mt-6 leading-6 text-midText text-sm md:text-lg">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
               lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
               fugiat aliqua.
@@ -27,7 +27,7 @@ export default function HomeMission() {
             <h2 className="text-4xl font-bold tracking-tight text-darkText lg:text-5xl">
               Vision
             </h2>
-            <p className="mt-3 md:mt-6 lg:leading-6 text-midText text-sm leading-5 md:text-lg">
+            <p className="mt-3 md:mt-6 leading-6 text-midText text-sm md:text-lg">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
               lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
               fugiat aliqua.

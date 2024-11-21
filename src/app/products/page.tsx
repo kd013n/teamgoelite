@@ -1,13 +1,15 @@
-import Header from "../components/SiteHeader";
+import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import ProductsBanner from "../components/ProductsBanner";
+import ProductsNavigation from "../components/ProductsNavigation";
 
 export default function Products() {
   return (
-    <>
-      <Header />
+    <div>
+      <SiteHeader />
       <ProductsBanner />
+      <ProductsNavigation />
       <SiteFooter />
-    </>
+    </div>
   );
 }

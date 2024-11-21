@@ -7,13 +7,13 @@ import HomeTagline from "./components/HomeTagline";
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Header />
       <HomeBanner />
       <HomeMission />
       <HomeNavigation />
       <HomeTagline />
       <SiteFooter />
-    </>
+    </div>
   );
 }

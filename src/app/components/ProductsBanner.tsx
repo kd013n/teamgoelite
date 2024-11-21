@@ -41,9 +41,9 @@ export default function ProductsBanner() {
           />
         </div>
       </div>
-      <div className="py-80 px-16 sm:24 xl:px-48 sm:pb-40 lg:pb-48 lg:pt-48">
+      <div className="py-72 px-16 xl:px-48 sm:py-64 lg:py-56">
         <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
-          <div className="sm:max-w-lg">
+          <div className="sm:max-w-sm md:max-w-lg -mt-28 lg:mt-auto">
             <p className="text-base leading-7 text-lightText font-bold">
               AXA Team Go Elite
             </p>
@@ -59,7 +59,6 @@ export default function ProductsBanner() {
           </div>
           <div>
             <div className="mt-10">
-              {/* Decorative image grid */}
               <div
                 aria-hidden="true"
                 className="pointer-events-none md:absolute md:inset-y-0 md:mx-auto md:w-full md:max-w-7xl"

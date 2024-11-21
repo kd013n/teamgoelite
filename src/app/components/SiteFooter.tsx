@@ -22,8 +22,8 @@ export default function SiteFooter() {
   return (
     <>
       <footer className="footer grid lg:grid-cols-4 md:grid-cols-2 md:grid-rows-2 lg:grid-rows-1 text-base-content p-16 px-24 xl:px-48 bg-footerBg">
-        <nav>
-          <h6 className="footer-title opacity-100 text-lg text-darkestText hover:text-links">
+        <nav className="flex flex-col gap-y-1">
+          <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
             Careers
           </h6>
           <Link
@@ -65,8 +65,8 @@ export default function SiteFooter() {
             High-Income Earners
           </Link>
         </nav>
-        <nav>
-          <h6 className="footer-title opacity-100 text-lg text-darkestText hover:text-links">
+        <nav className="flex flex-col gap-y-1">
+          <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
             Products
           </h6>
           <Link
@@ -112,8 +112,8 @@ export default function SiteFooter() {
             General Insurance
           </Link>
         </nav>
-        <nav>
-          <h6 className="footer-title opacity-100 text-lg text-darkestText hover:text-links">
+        <nav className="flex flex-col gap-y-1">
+          <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
             Support
           </h6>
           <Link
@@ -135,27 +135,27 @@ export default function SiteFooter() {
             FAQs
           </Link>
           <span className="py-3">
-            <h6 className="footer-title opacity-100 text-lg text-darkestText hover:text-links">
+            <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
               About
             </h6>
-            <h6 className="footer-title opacity-100 text-lg text-darkestText hover:text-links">
+            <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
               Events
             </h6>
-            <h6 className="footer-title opacity-100 text-lg text-darkestText hover:text-links">
+            <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
               Testimonials
             </h6>
           </span>
         </nav>
 
-        <nav>
-          <h6 className="footer-title opacity-100 text-lg text-darkestText hover:text-links">
+        <nav className="flex flex-col gap-y-1">
+          <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
             Contact Us
           </h6>
           <Link
             href="/"
             className="link font-medium no-underline text-midText hover:text-links"
           >
-            <b className="px-3">
+            <b className="pr-3">
               <FontAwesomeIcon icon={faEnvelope} />
             </b>
             info@teamgoelite.com
@@ -164,7 +164,7 @@ export default function SiteFooter() {
             href="/"
             className="link font-medium no-underline text-midText hover:text-links"
           >
-            <b className="px-3">
+            <b className="pr-3">
               <FontAwesomeIcon icon={faPhone} />
             </b>
             +63 998 999 6517
@@ -174,7 +174,7 @@ export default function SiteFooter() {
             className="link font-medium no-underline text-midText hover:text-links"
           >
             <div className="flex flex-row">
-              <b className="px-3">
+              <b className="pr-3">
                 <FontAwesomeIcon icon={faLocationDot} />
               </b>
               <p>
@@ -186,7 +186,7 @@ export default function SiteFooter() {
         </nav>
       </footer>
       <footer className="footer grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-y-5 text-base-content px-24 xl:px-48 py-8 text-darkText bg-footerBg2">
-        <aside className="grid-flow-col justify-self-center md:justify-self-start items-center">
+        <div className="grid grid-flow-col justify-self-center md:justify-self-start items-center">
           <Image
             src={TGELogo}
             alt="Team Go Elite Logo"
@@ -194,12 +194,12 @@ export default function SiteFooter() {
             height={0}
             className="max-w-36 object-cover"
           />
-          <p className="px-3 hidden lg:block">
+          <p className="pl-5 hidden lg:block">
             <span className="font-bold text-2xl">Team Go Elite</span>
             <br />
             &copy; 2024 TGE &#215; kd013n
           </p>
-        </aside>
+        </div>
         <nav className="justify-self-center md:place-self-center md:justify-self-end">
           <div className="grid grid-flow-col gap-4 text-sm">
             <Link href="/">
