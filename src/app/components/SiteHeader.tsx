@@ -46,7 +46,7 @@ const careers = [
     name: "Career Programs",
     description:
       "Launch your insurance career with comprehensive training at Team Go Elite",
-    href: "/",
+    href: "/careers#careerPrograms",
     icon: BriefcaseIcon,
   },
   {
@@ -225,14 +225,14 @@ export default function SiteHeader() {
           </Popover>
 
           <Link
-            href="/"
+            href="/testimonials"
             className="text-sm font-semibold leading-6 text-darkText"
           >
             Testimonials
           </Link>
 
           <Link
-            href="/"
+            href="/about"
             className="text-sm font-semibold leading-6 text-darkText"
           >
             About TGE
@@ -240,7 +240,7 @@ export default function SiteHeader() {
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-x-12">
           <Link
-            href="/"
+            href="/support"
             className="text-sm font-semibold leading-6 text-darkText"
           >
             Support

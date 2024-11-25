@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import SampleImage from "../../public/images/Home/HomeMissionBanner.jpg";
 
 const links = [
   { name: "Open roles", href: "#" },
@@ -17,7 +18,9 @@ export default function Example() {
     >
       <Image
         alt=""
-        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+        height={0}
+        width={0}
+        src={SampleImage}
         className="absolute inset-0 -z-10 size-full object-cover object-right md:object-center"
       />
       <div

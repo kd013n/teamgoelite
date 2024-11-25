@@ -383,7 +383,7 @@ export default function ProductsNavigation() {
                   {subCategories.map((category) => (
                     <li
                       key={category.name}
-                      className={`text-left rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-darkText hover:bg-footerBg2 ${
+                      className={`text-left rounded-lg py-2 pl-6 pr-3 mb-1 text-sm font-semibold leading-7 text-darkText hover:bg-footerBg2 ${
                         activeCategory === category.value ? "bg-footerBg" : ""
                       }`}
                     >
@@ -455,28 +455,12 @@ export default function ProductsNavigation() {
                 </ul>
               </form>
 
-              {/* Products grid with dynamic title */}
-              <div className="flex-1 overflow-y-auto h-[40rem]">
-                <div className="mb-6">
-                  <div className="grid-cols-1 grid-rows-2 border-b border-lightestText pb-6">
-                    {/* Image and Title */}
-                    <div className="flex flex-col items-start">
-                      {activeCategoryData.imageSrc ? (
-                        <Image
-                          src={activeCategoryData.imageSrc}
-                          height={0}
-                          width={0}
-                          alt=""
-                          className="rounded-lg object-cover w-full h-48"
-                        />
-                      ) : (
-                        <div className="w-full h-48 bg-gray-200 rounded-lg"></div> // Placeholder
-                      )}
-                    </div>
-                    {/* Only show button for subcategories except "All Products" */}
+              <div className="flex-1">
+                <div className="px-6 border-b border-lightestText">
+                  <div className="grid-cols-1 grid-rows-2 pb-6">
                     <div className="grid grid-cols-3 grid-rows-1">
                       <div className="col-span-2">
-                        <h3 className="text-2xl font-bold text-darkText mt-4">
+                        <h3 className="text-2xl font-bold text-darkText">
                           {activeCategoryData.name}
                         </h3>
                         <p className="text-gray-600 text-sm mt-2">
@@ -496,35 +480,37 @@ export default function ProductsNavigation() {
                     </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 pt-4">
-                  {filteredProducts.map((product) => (
-                    <div
-                      key={product.id}
-                      className="group hover:opacity-8 cursor-pointer"
-                      onClick={() => setSelectedProduct(product)}
-                    >
-                      <Image
-                        src={product.imageSrc}
-                        height={0}
-                        width={0}
-                        alt=""
-                        className="w-full rounded-lg object-cover aspect-[4/3]"
-                      />
-                      <article className="mt-3 flex max-w-xl flex-col items-start justify-between">
-                        <div className="flex items-center gap-x-4 text-xs">
-                          <div className="relative rounded-full bg-footerBg2 px-3 py-1.5 font-medium text-darkText">
-                            {product.category.title}
+                <div className="overflow-y-auto h-[30rem] px-6 py-6 border-b border-lightestText">
+                  <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                    {filteredProducts.map((product) => (
+                      <div
+                        key={product.id}
+                        className="group hover:opacity-8 cursor-pointer"
+                        onClick={() => setSelectedProduct(product)}
+                      >
+                        <Image
+                          src={product.imageSrc}
+                          height={0}
+                          width={0}
+                          alt=""
+                          className="w-full rounded-lg object-cover aspect-[4/3]"
+                        />
+                        <article className="mt-3 flex max-w-xl flex-col items-start justify-between">
+                          <div className="flex items-center gap-x-4 text-xs">
+                            <div className="relative rounded-full bg-footerBg2 px-3 py-1.5 font-medium text-darkText">
+                              {product.category.title}
+                            </div>
                           </div>
-                        </div>
-                        <p className="font-semibold mt-3 mb-2 text-lg leading-tight text-darkText">
-                          <div>{product.name}</div>
-                        </p>
-                        <p className="font-medium text-sm text-gray-500 line-clamp-2">
-                          {product.description}
-                        </p>
-                      </article>
-                    </div>
-                  ))}
+                          <p className="font-semibold mt-3 mb-2 text-lg leading-tight text-darkText">
+                            <div>{product.name}</div>
+                          </p>
+                          <p className="font-medium text-sm text-gray-500 line-clamp-2">
+                            {product.description}
+                          </p>
+                        </article>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
