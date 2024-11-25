@@ -143,22 +143,12 @@ export default function ProductsBanner() {
                   </div>
                 </div>
               </div>
-
-              <div className="flex flex-col justify-start items-start gap-y-3 gap-x-5 md:flex-row">
-                <Link
-                  href="#products"
-                  className="inline-block rounded-md border border-transparent bg-buttons px-4 py-3 text-center font-medium text-white hover:bg-hoverButtons"
-                >
-                  Browse <ArrowRightIcon className="inline-block size-4 ml-1" />
-                </Link>
-                <Link
-                  href="#FNA"
-                  className="inline-block rounded-md border border-transparent py-3 text-center font-medium text-foreground"
-                >
-                  Learn more{" "}
-                  <ArrowRightIcon className="inline-block size-4 ml-1" />
-                </Link>
-              </div>
+              <Link
+                href="#products"
+                className="inline-block rounded-md border border-transparent bg-buttons px-4 py-3 text-center font-medium text-white hover:bg-hoverButtons"
+              >
+                Browse <ArrowRightIcon className="inline-block size-4 ml-1" />
+              </Link>
             </div>
           </div>
         </div>

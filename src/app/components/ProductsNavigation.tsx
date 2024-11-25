@@ -349,7 +349,7 @@ export default function ProductsNavigation() {
   if (!isMounted) return null;
 
   return (
-    <div className="bg-background" id="products">
+    <div className="bg-background" id="navigation">
       <div>
         <Dialog
           open={mobileFiltersOpen}
@@ -393,6 +393,7 @@ export default function ProductsNavigation() {
                           setActiveCategory(category.value);
                           setMobileFiltersOpen(false); // Close filter after selection
                         }}
+                        className="w-full text-left"
                       >
                         {category.name}
                       </button>
@@ -405,10 +406,7 @@ export default function ProductsNavigation() {
         </Dialog>
 
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
-            <h1 className="text-4xl font-bold tracking-tight text-darkText">
-              Products
-            </h1>
+          <div className="flex items-baseline justify-end pb-3 pt-16">
             <div className="flex items-center">
               <button
                 type="button"
@@ -460,7 +458,7 @@ export default function ProductsNavigation() {
                   <div className="grid-cols-1 grid-rows-2 pb-6">
                     <div className="grid grid-cols-3 grid-rows-1">
                       <div className="col-span-2">
-                        <h3 className="text-2xl font-bold text-darkText">
+                        <h3 className="text-3xl md:text-4xl font-bold text-darkText">
                           {activeCategoryData.name}
                         </h3>
                         <p className="text-gray-600 text-sm mt-2">
@@ -480,7 +478,7 @@ export default function ProductsNavigation() {
                     </div>
                   </div>
                 </div>
-                <div className="overflow-y-auto h-[30rem] px-6 py-6 border-b border-lightestText">
+                <div className="overflow-y-auto h-[40rem] md:h-[32rem] px-6 py-6 border-b border-lightestText">
                   <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                     {filteredProducts.map((product) => (
                       <div
@@ -556,7 +554,7 @@ export default function ProductsNavigation() {
                   </p>
 
                   {/* Buttons */}
-                  <div className="mt-4 flex gap-4">
+                  <div className="mt-4">
                     {/* Consult Adviser Button */}
                     <Link
                       href="https://example.com"
