@@ -1,262 +1,352 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import { FunnelIcon } from "@heroicons/react/20/solid";
-import Image from "next/image";
+import {
+  XMarkIcon,
+  ArrowRightIcon,
+  ArrowTopRightOnSquareIcon,
+} from "@heroicons/react/24/outline";
+import { ListBulletIcon } from "@heroicons/react/20/solid";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import SampleImage from "../../public/images/Home/HomeMissionBanner.jpg";
 
 const subCategories = [
-  { name: "All Products", value: "all" },
-  { name: "Health and Critical Illness", value: "Health" },
-  { name: "Income Protection", value: "Income" },
-  { name: "Lifestyle Protection", value: "Lifestyle" },
-  { name: "Education", value: "Education" },
-  { name: "Retirement", value: "Retirement" },
-  { name: "Savings and Investment", value: "Savings" },
-  { name: "Travel Insurance", value: "Travel" },
-  { name: "Car Insurance", value: "Car" },
-  { name: "Home Insurance", value: "Home" },
-  { name: "Commercial Insurance", value: "Commercial" },
+  {
+    name: "All Products",
+    value: "all",
+    description: "All the products we offer.",
+    imageSrc: SampleImage,
+    href: "/products/all",
+  },
+  {
+    name: "Health and Critical Illness",
+    value: "Health",
+    description: "Health-related insurance and services.",
+    imageSrc: SampleImage,
+    href: "/products/health",
+  },
+  {
+    name: "Income Protection",
+    value: "Income",
+    description: "Insurance for protecting your income.",
+    imageSrc: SampleImage,
+    href: "/products/income",
+  },
+  {
+    name: "Education",
+    value: "Education",
+    description: "Insurance for educational purposes.",
+    imageSrc: SampleImage,
+    href: "/products/education",
+  },
+  {
+    name: "Retirement",
+    value: "Retirement",
+    description: "Saving for your retirement.",
+    imageSrc: SampleImage,
+    href: "/products/retirement",
+  },
+  {
+    name: "Savings and Investment",
+    value: "Savings",
+    description: "Investing and saving for your future.",
+    imageSrc: SampleImage,
+    href: "/products/savings",
+  },
+  {
+    name: "Travel Insurance",
+    value: "Travel",
+    description: "Protect your travel with insurance.",
+    imageSrc: SampleImage,
+    href: "/products/travel",
+  },
+  {
+    name: "Car Insurance",
+    value: "Car",
+    description: "Insurance for your car.",
+    imageSrc: SampleImage,
+    href: "/products/car",
+  },
+  {
+    name: "Home Insurance",
+    value: "Home",
+    description: "Protect your home with insurance.",
+    imageSrc: SampleImage,
+    href: "/products/home",
+  },
+  {
+    name: "Commercial Insurance",
+    value: "Commercial",
+    description: "Insurance for commercial businesses.",
+    imageSrc: SampleImage,
+    href: "/products/commercial",
+  },
 ];
 
 const products = [
   {
     id: 1,
     name: "Global Health Access",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Health", href: "#" },
+    category: { title: "Health" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 2,
     name: "Health Care Access",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Health", href: "#" },
+    category: { title: "Health" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 3,
     name: "HealthMax",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Health", href: "#" },
+    category: { title: "Health" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 4,
     name: "Health Start",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Health", href: "#" },
+    category: { title: "Health" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 5,
     name: "Health Start Lite",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Health", href: "#" },
+    category: { title: "Health" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 6,
     name: "Assure",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Health", href: "#" },
+    category: { title: "Health" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 7,
     name: "My Life Choice Health",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Health", href: "#" },
+    category: { title: "Health" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 8,
     name: "My Life Choice Protect",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Income", href: "#" },
+    category: { title: "Income" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 9,
     name: "FlexiProtect",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Income", href: "#" },
+    category: { title: "Income" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 10,
     name: "Personal Accident",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Income", href: "#" },
+    category: { title: "Income" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 11,
     name: "My Life Choice Education",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Education", href: "#" },
+    category: { title: "Education" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 12,
     name: "My Life Choice Retirement",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Retirement", href: "#" },
+    category: { title: "Retirement" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 13,
     name: "My Life Choice",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Savings", href: "#" },
+    category: { title: "Savings" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 14,
     name: "Asset Protect",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Savings", href: "#" },
+    category: { title: "Savings" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 15,
     name: "Asset Master",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Savings", href: "#" },
+    category: { title: "Savings" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 16,
     name: "Travel Insurance",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Travel", href: "#" },
+    category: { title: "Travel" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 17,
     name: "Car Insurance",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Car", href: "#" },
+    category: { title: "Car" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 18,
     name: "Home Insurance",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Home", href: "#" },
+    category: { title: "Home" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 19,
     name: "Commercial Property",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Commercial", href: "#" },
+    category: { title: "Commercial" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 20,
     name: "Liability and Other Casualty",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Commercial", href: "#" },
+    category: { title: "Commercial" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 21,
     name: "Marine",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Commercial", href: "#" },
+    category: { title: "Commercial" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 22,
     name: "Engineer",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Commercial", href: "#" },
+    category: { title: "Commercial" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 23,
     name: "Surety (Bonds)",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Commercial", href: "#" },
+    category: { title: "Commercial" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 24,
     name: "SME",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Commercial", href: "#" },
+    category: { title: "Commercial" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
   {
     id: 25,
     name: "SMEX",
-    href: "#",
+    resource: "#",
     imageSrc: SampleImage,
-    category: { title: "Commercial", href: "#" },
+    category: { title: "Commercial" },
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
   },
 ];
 
+interface products {
+  name: string;
+  value: string;
+  description?: string; // Optional field
+  imageSrc?: StaticImageData; // Optional field
+  href: string;
+}
+
 export default function ProductsNavigation() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
   const [activeCategory, setActiveCategory] = useState("all");
+  const [selectedProduct, setSelectedProduct] = useState<
+    (typeof products)[0] | null
+  >(null);
 
   const filteredProducts =
     activeCategory === "all"
       ? products
       : products.filter((product) => product.category.title === activeCategory);
+
+  const activeCategoryData = subCategories.find(
+    (category) => category.value === activeCategory
+  ) ?? {
+    name: "",
+    value: "",
+    description: "",
+  };
+
+  if (!isMounted) return null;
 
   return (
     <div className="bg-background" id="products">
@@ -327,7 +417,7 @@ export default function ProductsNavigation() {
                 className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
               >
                 <span className="sr-only">Product Categories</span>
-                <FunnelIcon aria-hidden="true" className="size-5" />
+                <ListBulletIcon aria-hidden="true" className="size-5" />
               </button>
             </div>
           </div>
@@ -366,31 +456,67 @@ export default function ProductsNavigation() {
                 </ul>
               </form>
 
-              {/* Products grid */}
-              <div className="flex-1 overflow-y-auto">
-                <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+              {/* Products grid with dynamic title */}
+              <div className="flex-1 overflow-y-auto h-[40rem]">
+                <div className="mb-6">
+                  <div className="grid-cols-1 grid-rows-2 border-b border-lightestText pb-6">
+                    {/* Image and Title */}
+                    <div className="flex flex-col items-start">
+                      <Image
+                        src={activeCategoryData.imageSrc}
+                        height={0}
+                        width={0}
+                        alt=""
+                        className="rounded-lg object-cover w-full h-48"
+                      />
+                    </div>
+                    {/* Only show button for subcategories except "All Products" */}
+                    <div className="grid grid-cols-3 grid-rows-1">
+                      <div className="col-span-2">
+                        <h3 className="text-2xl font-bold text-gray-900 mt-4">
+                          {activeCategoryData.name}
+                        </h3>
+                        <p className="text-gray-600 text-sm mt-2">
+                          {activeCategoryData.description}
+                        </p>
+                      </div>
+                      <div className="col-span-1 flex justify-end items-center pr-5">
+                        {activeCategory !== "all" && (
+                          <div className="self-center bg-buttons text-sm text-background py-2 px-4 rounded-md hover:bg-hoverButtons">
+                            <span className="hidden md:inline-block mr-1">
+                              See More
+                            </span>{" "}
+                            <ArrowRightIcon className="inline-block size-4" />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 pt-4">
                   {filteredProducts.map((product) => (
-                    <div key={product.id} className="group">
+                    <div
+                      key={product.id}
+                      className="group hover:opacity-8 cursor-pointer"
+                      onClick={() => setSelectedProduct(product)}
+                    >
                       <Image
                         src={product.imageSrc}
                         height={0}
                         width={0}
                         alt=""
-                        className="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-[7/8]"
+                        className="w-full rounded-lg object-cover aspect-[4/3]"
                       />
                       <article className="mt-3 flex max-w-xl flex-col items-start justify-between">
                         <div className="flex items-center gap-x-4 text-xs">
-                          <a
-                            href={product.category.href}
-                            className="relative rounded-full bg-footerBg2 px-3 py-1.5 font-medium text-gray-900 hover:bg-footerBg"
-                          >
+                          <div className="relative rounded-full bg-footerBg2 px-3 py-1.5 font-medium text-gray-900">
                             {product.category.title}
-                          </a>
+                          </div>
                         </div>
                         <p className="font-semibold mt-3 mb-2 text-lg leading-tight text-gray-900">
-                          <a href={product.href}>{product.name}</a>
+                          <div>{product.name}</div>
                         </p>
-                        <p className="text-sm font-normal text-gray-700 line-clamp-2">
+                        <p className="font-medium text-sm text-gray-500 line-clamp-2">
                           {product.description}
                         </p>
                       </article>
@@ -402,6 +528,75 @@ export default function ProductsNavigation() {
           </section>
         </main>
       </div>
+
+      {selectedProduct && (
+        <Dialog
+          open={!!selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          className="relative z-10"
+        >
+          <DialogBackdrop className="fixed inset-0 bg-gray-500/75 transition-opacity" />
+          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center px-4 py-8 text-center sm:px-6 lg:px-8">
+              <DialogPanel className="relative w-full max-w-2xl transform bg-white rounded-lg p-6 shadow-xl text-left">
+                <button
+                  type="button"
+                  onClick={() => setSelectedProduct(null)}
+                  className="absolute right-4 top-4 text-gray-400 hover:text-gray-500"
+                >
+                  <span className="sr-only">Close</span>
+                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                </button>
+
+                <div className="flex flex-col items-start px-6 py-6">
+                  <Image
+                    src={selectedProduct.imageSrc}
+                    alt={selectedProduct.name}
+                    width={400}
+                    height={300}
+                    className="rounded-lg w-full object-cover"
+                  />
+                  <div className="mt-4 relative font-medium text-lightText text-sm">
+                    {selectedProduct.category.title}
+                  </div>
+                  <h2 className="mt-2 text-2xl font-bold text-gray-900">
+                    {selectedProduct.name}
+                  </h2>
+                  <p className="mt-2 text-sm text-gray-500">
+                    {selectedProduct.description}
+                  </p>
+
+                  {/* Buttons */}
+                  <div className="mt-4 flex gap-4">
+                    {/* Consult Adviser Button */}
+                    <Link
+                      href="https://example.com"
+                      target="_blank"
+                      className="bg-buttons text-background px-4 py-2 rounded-md hover:bg-hoverButtons"
+                    >
+                      <span className="mr-2 text-sm">
+                        Consult a Financial Adviser
+                      </span>{" "}
+                      <ArrowRightIcon className="inline-block size-4" />
+                    </Link>
+                    {/* Learn More Button */}
+                    <Link
+                      href={selectedProduct.resource}
+                      target="_blank"
+                      className="inline-flex items-center bg-footerBg text-darkText px-4 py-2 rounded-md hover:bg-footerBg2"
+                    >
+                      <span className="mr-2 text-sm hidden sm:inline-block">
+                        Learn More
+                      </span>{" "}
+                      <ArrowTopRightOnSquareIcon className="inline-block size-4" />
+                    </Link>
+                  </div>
+                </div>
+              </DialogPanel>
+            </div>
+          </div>
+        </Dialog>
+      )}
     </div>
   );
 }

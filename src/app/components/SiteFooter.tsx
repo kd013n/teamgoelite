@@ -21,7 +21,7 @@ import TGELogo from "../../public/logo.png";
 export default function SiteFooter() {
   return (
     <>
-      <footer className="footer grid lg:grid-cols-4 md:grid-cols-2 md:grid-rows-2 lg:grid-rows-1 text-base-content p-16 px-24 xl:px-48 bg-footerBg">
+      <footer className="footer grid lg:grid-cols-4 md:grid-cols-2 md:grid-rows-2 lg:grid-rows-1 gap-y-5 text-base-content p-16 px-24 xl:px-48 bg-footerBg">
         <nav className="flex flex-col gap-y-1">
           <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
             Careers
@@ -170,7 +170,8 @@ export default function SiteFooter() {
             +63 998 999 6517
           </Link>
           <Link
-            href="/https://maps.app.goo.gl/hcGjVByp2RqLRZ118"
+            href="https://maps.app.goo.gl/hcGjVByp2RqLRZ118"
+            target="_blank"
             className="link font-medium no-underline text-midText hover:text-links"
           >
             <div className="flex flex-row">
@@ -202,31 +203,31 @@ export default function SiteFooter() {
         </div>
         <nav className="justify-self-center md:place-self-center md:justify-self-end">
           <div className="grid grid-flow-col gap-4 text-sm">
-            <Link href="/">
+            <Link href="https://facebook.com" target="_blank">
               <FontAwesomeIcon
                 icon={faFacebook}
                 className="text-2xl hover:text-buttons hover:font-bold"
               />
             </Link>
-            <Link href="/">
+            <Link href="https://youtube.com" target="_blank">
               <FontAwesomeIcon
                 icon={faYoutube}
                 className="text-2xl hover:text-buttons hover:font-bold"
               />
             </Link>
-            <Link href="/">
+            <Link href="https://x.com" target="_blank">
               <FontAwesomeIcon
                 icon={faXTwitter}
                 className="text-2xl hover:text-buttons hover:font-bold"
               />
             </Link>
-            <Link href="/">
+            <Link href="https://instagram.com" target="_blank">
               <FontAwesomeIcon
                 icon={faInstagram}
                 className="text-2xl hover:text-buttons hover:font-bold"
               />
             </Link>
-            <Link href="/">
+            <Link href="https://tiktok.com" target="_blank">
               <FontAwesomeIcon
                 icon={faTiktok}
                 className="text-2xl hover:text-buttons hover:font-bold"

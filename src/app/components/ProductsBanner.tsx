@@ -1,6 +1,8 @@
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
+
 export default function ProductsBanner() {
   return (
-    <div className="relative isolate overflow-hidden bg-background">
+    <div className="relative isolate overflow-hidden bg-background pb-16">
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 transform-gpu overflow-hidden blur-3xl"
@@ -128,7 +130,7 @@ export default function ProductsBanner() {
                 href="#products"
                 className="inline-block rounded-md border border-transparent bg-buttons px-8 py-3 text-center font-medium text-white hover:bg-hoverButtons"
               >
-                Browse
+                Browse <ArrowRightIcon className="inline-block size-4 ml-1" />
               </a>
             </div>
           </div>

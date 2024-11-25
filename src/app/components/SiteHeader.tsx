@@ -29,13 +29,19 @@ import {
   HeartIcon,
   HomeIcon,
   PlusCircleIcon,
-  ShoppingBagIcon,
+  SquaresPlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const careers = [
+  {
+    name: "Overview",
+    description: "Preview of careers opportunities at Team Go Elite",
+    href: "/careers",
+    icon: SquaresPlusIcon,
+  },
   {
     name: "Career Programs",
     description:
@@ -61,7 +67,13 @@ const careers = [
 
 const products = [
   {
-    name: "Health",
+    name: "Overview",
+    description: "Preview of product solutions at Team Go Elite",
+    href: "/products",
+    icon: SquaresPlusIcon,
+  },
+  {
+    name: "Health and Critical Illness",
     description: "Get a better understanding of your traffic",
     href: "#",
     icon: HeartIcon,
@@ -71,12 +83,6 @@ const products = [
     description: "Speak directly to your customers",
     href: "#",
     icon: CreditCardIcon,
-  },
-  {
-    name: "Lifestyle Protection",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: ShoppingBagIcon,
   },
   {
     name: "Education",
