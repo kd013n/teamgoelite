@@ -366,25 +366,25 @@ export default function ProductsNavigation() {
               className="relative ml-auto flex size-full max-w-xs transform flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl transition duration-300 ease-in-out data-[closed]:translate-x-full"
             >
               <div className="flex items-center justify-between px-4">
-                <h2 className="text-xl md:lg font-medium text-gray-900">
+                <h2 className="text-xl font-bold text-darkText pl-3 pt-6">
                   Product Categories
                 </h2>
                 <button
                   type="button"
                   onClick={() => setMobileFiltersOpen(false)}
-                  className="-mr-2 flex size-10 items-center justify-center rounded-md bg-white p-2 text-gray-400"
+                  className="-mr-2 flex size-10 items-center justify-center rounded-lg bg-white p-2 text-gray-400"
                 >
                   <span className="sr-only">Close menu</span>
                   <XMarkIcon aria-hidden="true" className="size-6" />
                 </button>
               </div>
               <form>
-                <ul className="mt-4">
+                <ul className="mt-4 text-sm px-3">
                   {subCategories.map((category) => (
                     <li
                       key={category.name}
-                      className={`${
-                        activeCategory === category.value ? "bg-gray-200" : ""
+                      className={`text-left rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-darkText hover:bg-footerBg2 ${
+                        activeCategory === category.value ? "bg-footerBg" : ""
                       }`}
                     >
                       <button
@@ -393,7 +393,6 @@ export default function ProductsNavigation() {
                           setActiveCategory(category.value);
                           setMobileFiltersOpen(false); // Close filter after selection
                         }}
-                        className="w-full text-left hover:bg-footerBg2 px-4 py-3"
                       >
                         {category.name}
                       </button>
@@ -407,7 +406,7 @@ export default function ProductsNavigation() {
 
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900">
+            <h1 className="text-4xl font-bold tracking-tight text-darkText">
               Products
             </h1>
             <div className="flex items-center">
@@ -433,7 +432,7 @@ export default function ProductsNavigation() {
                 <h3 className="sr-only">Categories</h3>
                 <ul
                   role="list"
-                  className="space-y-1 text-sm font-medium text-gray-900 sticky top-24"
+                  className="space-y-1 text-sm font-medium text-darkText sticky top-24"
                 >
                   {subCategories.map((category) => (
                     <li
@@ -477,7 +476,7 @@ export default function ProductsNavigation() {
                     {/* Only show button for subcategories except "All Products" */}
                     <div className="grid grid-cols-3 grid-rows-1">
                       <div className="col-span-2">
-                        <h3 className="text-2xl font-bold text-gray-900 mt-4">
+                        <h3 className="text-2xl font-bold text-darkText mt-4">
                           {activeCategoryData.name}
                         </h3>
                         <p className="text-gray-600 text-sm mt-2">
@@ -513,11 +512,11 @@ export default function ProductsNavigation() {
                       />
                       <article className="mt-3 flex max-w-xl flex-col items-start justify-between">
                         <div className="flex items-center gap-x-4 text-xs">
-                          <div className="relative rounded-full bg-footerBg2 px-3 py-1.5 font-medium text-gray-900">
+                          <div className="relative rounded-full bg-footerBg2 px-3 py-1.5 font-medium text-darkText">
                             {product.category.title}
                           </div>
                         </div>
-                        <p className="font-semibold mt-3 mb-2 text-lg leading-tight text-gray-900">
+                        <p className="font-semibold mt-3 mb-2 text-lg leading-tight text-darkText">
                           <div>{product.name}</div>
                         </p>
                         <p className="font-medium text-sm text-gray-500 line-clamp-2">
@@ -563,7 +562,7 @@ export default function ProductsNavigation() {
                   <div className="mt-4 relative font-medium text-lightText text-sm">
                     {selectedProduct.category.title}
                   </div>
-                  <h2 className="mt-2 text-2xl font-bold text-gray-900">
+                  <h2 className="mt-2 text-2xl font-bold text-darkText">
                     {selectedProduct.name}
                   </h2>
                   <p className="mt-2 text-sm text-gray-500">

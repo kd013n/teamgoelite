@@ -1,4 +1,8 @@
+import Link from "next/link";
+import Image from "next/image";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
+
+import SampleImage from "../../public/images/Home/HomeMissionBanner.jpg";
 
 export default function ProductsBanner() {
   return (
@@ -69,55 +73,69 @@ export default function ProductsBanner() {
                   <div className="flex items-center space-x-6 lg:space-x-8">
                     <div className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
-                        <img
+                        <Image
                           alt=""
-                          src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
+                          src={SampleImage}
+                          height={0}
+                          width={0}
                           className="size-full object-cover"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <img
+                        <Image
                           alt=""
-                          src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
-                          className="size-full object-cover"
-                        />
-                      </div>
-                    </div>
-                    <div className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                      <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <img
-                          alt=""
-                          src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
-                          className="size-full object-cover"
-                        />
-                      </div>
-                      <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <img
-                          alt=""
-                          src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
-                          className="size-full object-cover"
-                        />
-                      </div>
-                      <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <img
-                          alt=""
-                          src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
+                          src={SampleImage}
+                          height={0}
+                          width={0}
                           className="size-full object-cover"
                         />
                       </div>
                     </div>
                     <div className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <img
+                        <Image
                           alt=""
-                          src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
+                          src={SampleImage}
+                          height={0}
+                          width={0}
                           className="size-full object-cover"
                         />
                       </div>
                       <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <img
+                        <Image
                           alt=""
-                          src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+                          src={SampleImage}
+                          height={0}
+                          width={0}
+                          className="size-full object-cover"
+                        />
+                      </div>
+                      <div className="h-64 w-44 overflow-hidden rounded-lg">
+                        <Image
+                          alt=""
+                          src={SampleImage}
+                          height={0}
+                          width={0}
+                          className="size-full object-cover"
+                        />
+                      </div>
+                    </div>
+                    <div className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                      <div className="h-64 w-44 overflow-hidden rounded-lg">
+                        <Image
+                          alt=""
+                          src={SampleImage}
+                          height={0}
+                          width={0}
+                          className="size-full object-cover"
+                        />
+                      </div>
+                      <div className="h-64 w-44 overflow-hidden rounded-lg">
+                        <Image
+                          alt=""
+                          src={SampleImage}
+                          height={0}
+                          width={0}
                           className="size-full object-cover"
                         />
                       </div>
@@ -126,12 +144,21 @@ export default function ProductsBanner() {
                 </div>
               </div>
 
-              <a
-                href="#products"
-                className="inline-block rounded-md border border-transparent bg-buttons px-8 py-3 text-center font-medium text-white hover:bg-hoverButtons"
-              >
-                Browse <ArrowRightIcon className="inline-block size-4 ml-1" />
-              </a>
+              <div className="flex flex-col justify-start items-start gap-y-3 gap-x-5 md:flex-row">
+                <Link
+                  href="#products"
+                  className="inline-block rounded-md border border-transparent bg-buttons px-4 py-3 text-center font-medium text-white hover:bg-hoverButtons"
+                >
+                  Browse <ArrowRightIcon className="inline-block size-4 ml-1" />
+                </Link>
+                <Link
+                  href="#FNA"
+                  className="inline-block rounded-md border border-transparent py-3 text-center font-medium text-foreground"
+                >
+                  Learn more{" "}
+                  <ArrowRightIcon className="inline-block size-4 ml-1" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

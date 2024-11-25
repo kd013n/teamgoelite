@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 export default function HomeBanner() {
@@ -47,7 +48,7 @@ export default function HomeBanner() {
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-3xl py-44 lg:py-48">
+        <div className="relative z-10 mx-auto max-w-3xl py-52 lg:py-48">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-midText ring-1 ring-outlines hover:ring-hoverOutlines">
               We&apos;ve updated our site.{" "}
@@ -64,7 +65,7 @@ export default function HomeBanner() {
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl drop-shadow-lg">
               Empower Your Journey, Secure Your Future
             </h1>
-            <p className="mt-6 text-lg leading-8 text-darkText">
+            <p className="mt-6 text-md leading-7 md:leading-8 text-darkText">
               Team Go Elite is dedicated to guiding you towards a successful
               career in the insurance industry. We provide comprehensive
               training, mentorship, and resources to help you achieve financial
@@ -74,7 +75,7 @@ export default function HomeBanner() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
                 href="#HomeNavigation"
-                className="rounded-md bg-buttons px-3.5 py-2.5 text-sm font-semibold text-background shadow-lg hover:bg-hoverButtons"
+                className="rounded-md bg-buttons px-4 py-3 text-sm font-semibold text-background shadow-lg hover:bg-hoverButtons"
               >
                 Discover TGE
               </Link>
@@ -82,7 +83,10 @@ export default function HomeBanner() {
                 href="#HomeMission"
                 className="text-sm font-semibold leading-6 text-darkText"
               >
-                Our Ethos <span aria-hidden="true">→</span>
+                Our Ethos{" "}
+                <span aria-hidden="true">
+                  <ArrowRightIcon className="inline-block size-4" />
+                </span>
               </Link>
             </div>
           </div>

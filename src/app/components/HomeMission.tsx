@@ -17,7 +17,7 @@ export default function HomeMission() {
             <h2 className="text-4xl font-bold tracking-tight text-darkText lg:text-5xl">
               Mission
             </h2>
-            <p className="mt-3 md:mt-6 leading-6 text-midText text-sm md:text-lg">
+            <p className="mt-3 md:mt-6 leading-6 text-midText text-md md:text-lg">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
               lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
               fugiat aliqua.
@@ -27,7 +27,7 @@ export default function HomeMission() {
             <h2 className="text-4xl font-bold tracking-tight text-darkText lg:text-5xl">
               Vision
             </h2>
-            <p className="mt-3 md:mt-6 leading-6 text-midText text-sm md:text-lg">
+            <p className="mt-3 md:mt-6 leading-6 text-midText text-md md:text-lg">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
               lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
               fugiat aliqua.
@@ -36,7 +36,7 @@ export default function HomeMission() {
         </div>
 
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-          <dl className="mt-24 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4 text-center text-md lg:text-lg">
+          <dl className="mt-24 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4 text-center text-sm lg:text-lg">
             {stats.map((stat) => (
               <div key={stat.name} className="flex flex-col-reverse">
                 <dt className="text-base leading-7 text-gray-700">

@@ -143,7 +143,7 @@ export default function SiteHeader() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12 drop-shadow-2xl">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-darkText">
               Careers
               <ChevronDownIcon
                 aria-hidden="true"
@@ -170,7 +170,7 @@ export default function SiteHeader() {
                     <div className="flex-auto">
                       <a
                         href={item.href}
-                        className="block font-semibold text-gray-900"
+                        className="block font-semibold text-darkText"
                       >
                         {item.name}
                         <span className="absolute inset-0" />
@@ -184,7 +184,7 @@ export default function SiteHeader() {
           </Popover>
 
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-darkText">
               Products
               <ChevronDownIcon
                 aria-hidden="true"
@@ -211,7 +211,7 @@ export default function SiteHeader() {
                     <div className="flex-auto">
                       <a
                         href={item.href}
-                        className="block font-semibold text-gray-900"
+                        className="block font-semibold text-darkText"
                       >
                         {item.name}
                         <span className="absolute inset-0" />
@@ -226,14 +226,14 @@ export default function SiteHeader() {
 
           <Link
             href="/"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-semibold leading-6 text-darkText"
           >
             Testimonials
           </Link>
 
           <Link
             href="/"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-semibold leading-6 text-darkText"
           >
             About TGE
           </Link>
@@ -241,13 +241,13 @@ export default function SiteHeader() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-x-12">
           <Link
             href="/"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-semibold leading-6 text-darkText"
           >
             Support
           </Link>
           <Link
             href="/"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-semibold leading-6 text-darkText"
           >
             Log in
           </Link>
@@ -285,7 +285,7 @@ export default function SiteHeader() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
-                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-darkText hover:bg-footerBg2">
                     Careers
                     <ChevronDownIcon
                       aria-hidden="true"
@@ -298,7 +298,7 @@ export default function SiteHeader() {
                         key={item.name}
                         as="a"
                         href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-darkText hover:bg-footerBg2"
                       >
                         {item.name}
                       </DisclosureButton>
@@ -306,7 +306,7 @@ export default function SiteHeader() {
                   </DisclosurePanel>
                 </Disclosure>
                 <Disclosure as="div" className="-mx-3">
-                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-darkText hover:bg-footerBg2">
                     Products
                     <ChevronDownIcon
                       aria-hidden="true"
@@ -319,7 +319,7 @@ export default function SiteHeader() {
                         key={item.name}
                         as="a"
                         href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-darkText hover:bg-footerBg2"
                       >
                         {item.name}
                       </DisclosureButton>
@@ -328,13 +328,13 @@ export default function SiteHeader() {
                 </Disclosure>
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-darkText hover:bg-footerBg2"
                 >
                   Testimonials
                 </Link>
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-darkText hover:bg-footerBg2"
                 >
                   About TGE
                 </Link>
@@ -342,13 +342,13 @@ export default function SiteHeader() {
               <div className="py-6">
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-darkText hover:bg-footerBg2"
                 >
                   Support
                 </Link>
                 <Link
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-darkText hover:bg-footerBg2"
                 >
                   Log In
                 </Link>

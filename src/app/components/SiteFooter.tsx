@@ -195,11 +195,10 @@ export default function SiteFooter() {
             height={0}
             className="max-w-36 object-cover"
           />
-          <p className="pl-5 hidden lg:block">
-            <span className="font-bold text-2xl">Team Go Elite</span>
-            <br />
-            &copy; 2024 TGE &#215; kd013n
-          </p>
+          <div className="pl-5 hidden lg:block">
+            <p className="font-bold text-lg leading-none">Team Go Elite</p>
+            <span className="text-sm">&copy; 2024 TGE &#215; kd013n</span>
+          </div>
         </div>
         <nav className="justify-self-center md:place-self-center md:justify-self-end">
           <div className="grid grid-flow-col gap-4 text-sm">
