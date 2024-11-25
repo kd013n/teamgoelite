@@ -23,30 +23,30 @@ export default function SiteFooter() {
     <>
       <footer className="footer grid lg:grid-cols-4 md:grid-cols-2 md:grid-rows-2 lg:grid-rows-1 gap-y-5 text-base-content p-16 px-24 xl:px-48 bg-footerBg">
         <nav className="flex flex-col gap-y-1">
-          <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
+          <h6 className="font-bold uppercase opacity-100 text-md text-darkText py-1 hover:text-links">
             Careers
           </h6>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             Financial Adviser
           </Link>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             Unit Head
           </Link>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             Associate Branch Head
           </Link>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             Branch Head
           </Link>
@@ -54,106 +54,106 @@ export default function SiteFooter() {
           <br />
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             Travels and Incentives
           </Link>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             High-Income Earners
           </Link>
         </nav>
         <nav className="flex flex-col gap-y-1">
-          <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
+          <h6 className="font-bold uppercase opacity-100 text-md text-darkText py-1 hover:text-links">
             Products
           </h6>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             Health and Critical Illness
           </Link>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             Income Protection
           </Link>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             Lifestyle Protection
           </Link>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             Education
           </Link>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             Retirement
           </Link>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             Savings and Investment
           </Link>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             General Insurance
           </Link>
         </nav>
         <nav className="flex flex-col gap-y-1">
-          <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
+          <h6 className="font-bold uppercase opacity-100 text-md text-darkText py-1 hover:text-links">
             Support
           </h6>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             Resources
           </Link>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             Locate Us
           </Link>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             FAQs
           </Link>
           <span className="py-3">
-            <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
+            <h6 className="font-bold uppercase opacity-100 text-md text-darkText py-1 hover:text-links">
               About
             </h6>
-            <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
+            <h6 className="font-bold uppercase opacity-100 text-md text-darkText py-1 hover:text-links">
               Events
             </h6>
-            <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
+            <h6 className="font-bold uppercase opacity-100 text-md text-darkText py-1 hover:text-links">
               Testimonials
             </h6>
           </span>
         </nav>
 
         <nav className="flex flex-col gap-y-1">
-          <h6 className="font-bold uppercase opacity-100 text-lg text-darkText py-1 hover:text-links">
+          <h6 className="font-bold uppercase opacity-100 text-md text-darkText py-1 hover:text-links">
             Contact Us
           </h6>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             <b className="pr-3">
               <FontAwesomeIcon icon={faEnvelope} />
@@ -162,7 +162,7 @@ export default function SiteFooter() {
           </Link>
           <Link
             href="/"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             <b className="pr-3">
               <FontAwesomeIcon icon={faPhone} />
@@ -172,7 +172,7 @@ export default function SiteFooter() {
           <Link
             href="https://maps.app.goo.gl/hcGjVByp2RqLRZ118"
             target="_blank"
-            className="link font-medium no-underline text-midText hover:text-links"
+            className="link font-medium text-sm  no-underline text-midText hover:text-links"
           >
             <div className="flex flex-row">
               <b className="pr-3">

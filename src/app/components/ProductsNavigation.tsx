@@ -8,7 +8,7 @@ import {
   ArrowTopRightOnSquareIcon,
 } from "@heroicons/react/24/outline";
 import { ListBulletIcon } from "@heroicons/react/20/solid";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import SampleImage from "../../public/images/Home/HomeMissionBanner.jpg";
 
@@ -316,8 +316,7 @@ const products = [
 interface products {
   name: string;
   value: string;
-  description?: string; // Optional field
-  imageSrc?: StaticImageData; // Optional field
+  description?: string;
   href: string;
 }
 
@@ -344,6 +343,7 @@ export default function ProductsNavigation() {
     name: "",
     value: "",
     description: "",
+    imageSrc: undefined,
   };
 
   if (!isMounted) return null;
@@ -462,13 +462,17 @@ export default function ProductsNavigation() {
                   <div className="grid-cols-1 grid-rows-2 border-b border-lightestText pb-6">
                     {/* Image and Title */}
                     <div className="flex flex-col items-start">
-                      <Image
-                        src={activeCategoryData.imageSrc}
-                        height={0}
-                        width={0}
-                        alt=""
-                        className="rounded-lg object-cover w-full h-48"
-                      />
+                      {activeCategoryData.imageSrc ? (
+                        <Image
+                          src={activeCategoryData.imageSrc}
+                          height={0}
+                          width={0}
+                          alt=""
+                          className="rounded-lg object-cover w-full h-48"
+                        />
+                      ) : (
+                        <div className="w-full h-48 bg-gray-200 rounded-lg"></div> // Placeholder
+                      )}
                     </div>
                     {/* Only show button for subcategories except "All Products" */}
                     <div className="grid grid-cols-3 grid-rows-1">
