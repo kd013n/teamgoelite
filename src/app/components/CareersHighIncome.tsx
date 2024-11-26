@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const tiers = [
   {
@@ -96,11 +97,12 @@ export default function CareersHighIncome() {
             </p>
             <Link
               href={tier.href}
+              target="_blank"
               aria-describedby={tier.id}
               className={classNames(
                 tier.featured
-                  ? "bg-white/10 text-white shadow-sm hover:bg-white/20 focus-visible:outline-indigo-500"
-                  : "text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline-indigo-600",
+                  ? "text-white ring-1 ring-inset ring-white/20 hover:ring-white/50  focus-visible:outline-white"
+                  : "text-links ring-1 ring-inset ring-red-200 hover:ring-red-300 focus-visible:outline-red-400",
                 "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10"
               )}
             >
@@ -109,15 +111,17 @@ export default function CareersHighIncome() {
             {tier.id === "tier-mdrt" && tier.href2 && (
               <Link
                 href={tier.href2}
+                target="_blank"
                 aria-describedby={tier.id}
                 className={classNames(
                   tier.featured
-                    ? "bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500"
-                    : "text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline-indigo-600",
+                    ? "bg-hoverLinks text-white shadow-sm hover:bg-links focus-visible:outline-red-400"
+                    : "",
                   "mt-2 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                 )}
               >
-                {tier.href2name}
+                {tier.href2name}{" "}
+                <ArrowRightIcon className="inline-block size-4 ml-1" />
               </Link>
             )}
           </div>

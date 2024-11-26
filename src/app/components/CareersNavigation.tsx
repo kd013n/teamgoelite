@@ -106,11 +106,12 @@ const subCategories = [
 export default function CareersNavigation() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("financialAdvisers");
+  const [activeTab, setActiveTab] = useState("qualifications");
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
-  const [activeCategory, setActiveCategory] = useState("financialAdvisers");
 
   const activeCategoryData = subCategories.find(
     (category) => category.value === activeCategory
@@ -169,7 +170,7 @@ export default function CareersNavigation() {
                         type="button"
                         onClick={() => {
                           setActiveCategory(category.value);
-                          setMobileFiltersOpen(false); // Close filter after selection
+                          setMobileFiltersOpen(false);
                         }}
                         className="w-full text-left"
                       >
@@ -184,7 +185,7 @@ export default function CareersNavigation() {
         </Dialog>
 
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-baseline justify-between border-b border-lightestText pb-6 pt-24">
+          <div className="bg-background flex items-baseline justify-between border-b border-lightestText pb-6 pt-24 sticky top-6 md:top-0 md:relative">
             <h1 className="text-4xl font-bold tracking-tight text-darkText">
               Career Offerings
             </h1>
@@ -206,9 +207,7 @@ export default function CareersNavigation() {
             </h2>
 
             <div className="flex h-auto">
-              {/* Subcategories (desktop version) */}
               <form className="hidden lg:block w-1/4 pr-4">
-                <h3 className="sr-only">Categories</h3>
                 <ul
                   role="list"
                   className="space-y-1 text-sm font-medium text-darkText top-24"
@@ -236,8 +235,8 @@ export default function CareersNavigation() {
 
               <div className="flex-1">
                 <div className="px-6">
-                  <div className="h-[calc(100vh-12rem)] md:h-[30rem] bg-footerBg rounded-lg p-6 flex justify-center items-center">
-                    <div className="max-h-full grid grid-cols-1 grid-rows-3 px-6 md:grid-cols-3 md:grid-rows-1 md:gap-x-6 xl:gap-x-12">
+                  <div className="h-[100dvh] md:h-[35rem] bg-footerBg rounded-lg p-6 flex justify-center items-center">
+                    <div className="max-h-full grid grid-cols-1 grid-rows-3 px-6 py-6 md:grid-cols-3 md:grid-rows-1 md:gap-x-6 xl:gap-x-12">
                       <div className="row-span-1 md:col-span-1">
                         {activeCategoryData.imageSrc && (
                           <Image
@@ -250,8 +249,8 @@ export default function CareersNavigation() {
                         )}
                       </div>
                       <div className="row-span-2 md:row-span-1 md:col-span-2">
-                        <div className="border-b border-b-gray-400 pb-6">
-                          <h3 className="text-2xl font-bold text-darkText">
+                        <div className="pb-6">
+                          <h3 className="text-2xl font-bold text-darkText mt-6">
                             {activeCategoryData.name}
                           </h3>
                           <p className="text-midText text-sm mt-2">
@@ -259,47 +258,69 @@ export default function CareersNavigation() {
                           </p>
                           <div className="mt-6 flex justify-start">
                             {activeCategory !== "all" && (
-                              <div className="bg-buttons text-sm text-background py-3 px-4 rounded-md hover:bg-hoverButtons">
+                              <div className="bg-buttons text-sm text-background py-3 px-4 rounded-md hover:bg-hoverButtons mt-2">
                                 <span className="inline-block">Apply</span>{" "}
                                 <ArrowRightIcon className="inline-block size-4 ml-1" />
                               </div>
                             )}
                           </div>
                         </div>
-                        <div className="mt-4 overflow-y-scroll max-h-36">
-                          <div>
-                            <h1 className="font-semibold">Qualifications</h1>
-                            <ul role="list" className="">
-                              {activeCategoryData.qualifications.map(
-                                (feature) => (
+                        <div className="mt-4 h-[15rem]">
+                          <div className="flex border-b border-gray-300">
+                            <button
+                              className={`py-2 px-4 ${
+                                activeTab === "qualifications"
+                                  ? "border-b-2 border-buttons font-semibold"
+                                  : "text-gray-500"
+                              }`}
+                              onClick={() => setActiveTab("qualifications")}
+                            >
+                              Qualifications
+                            </button>
+                            <button
+                              className={`py-2 px-4 ${
+                                activeTab === "keytasks"
+                                  ? "border-b-2 border-buttons font-semibold"
+                                  : "text-gray-500"
+                              }`}
+                              onClick={() => setActiveTab("keytasks")}
+                            >
+                              Key Tasks
+                            </button>
+                          </div>
+                          <div className="mt-4 overflow-y-scroll max-h-36">
+                            {activeTab === "qualifications" && (
+                              <ul role="list" className="gap-y-3">
+                                {activeCategoryData.qualifications.map(
+                                  (feature) => (
+                                    <li
+                                      key={feature}
+                                      className="flex items-center py-1"
+                                    >
+                                      <CheckIcon className="inline-block size-4 fill-buttons mr-3" />
+                                      <span className="inline-block text-sm">
+                                        {feature}
+                                      </span>
+                                    </li>
+                                  )
+                                )}
+                              </ul>
+                            )}
+                            {activeTab === "keytasks" && (
+                              <ul role="list">
+                                {activeCategoryData.keytasks.map((task) => (
                                   <li
-                                    key={feature}
-                                    className="flex items-center gap-x-3"
+                                    key={task}
+                                    className="flex items-center py-1"
                                   >
-                                    <CheckIcon className="inline-block size-4 fill-buttons" />
+                                    <CheckIcon className="inline-block size-4 fill-buttons mr-3" />
                                     <span className="inline-block text-sm">
-                                      {feature}
+                                      {task}
                                     </span>
                                   </li>
-                                )
-                              )}
-                            </ul>
-                          </div>
-                          <div className="mt-4">
-                            <h1 className="font-semibold">Key Tasks</h1>
-                            <ul role="list" className="">
-                              {activeCategoryData.keytasks.map((task) => (
-                                <li
-                                  key={task}
-                                  className="flex items-center gap-x-3"
-                                >
-                                  <CheckIcon className="inline-block size-4 fill-buttons" />
-                                  <span className="inline-block text-sm">
-                                    {task}
-                                  </span>
-                                </li>
-                              ))}
-                            </ul>
+                                ))}
+                              </ul>
+                            )}
                           </div>
                         </div>
                       </div>

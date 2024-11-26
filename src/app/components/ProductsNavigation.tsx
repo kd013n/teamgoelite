@@ -349,7 +349,7 @@ export default function ProductsNavigation() {
   if (!isMounted) return null;
 
   return (
-    <div className="bg-background" id="navigation">
+    <div className="" id="navigation">
       <div>
         <Dialog
           open={mobileFiltersOpen}
@@ -430,7 +430,7 @@ export default function ProductsNavigation() {
                 <h3 className="sr-only">Categories</h3>
                 <ul
                   role="list"
-                  className="space-y-1 text-sm font-medium text-darkText sticky top-24"
+                  className="space-y-1 text-sm font-medium text-darkText top-24"
                 >
                   {subCategories.map((category) => (
                     <li

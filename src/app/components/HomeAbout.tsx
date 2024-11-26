@@ -1,12 +1,36 @@
+"use client";
+
 import Image from "next/image";
+import {
+  TrophyIcon,
+  UserGroupIcon,
+  StarIcon,
+  ChevronLeftIcon,
+} from "@heroicons/react/20/solid";
 
-import { TrophyIcon, UserGroupIcon, StarIcon } from "@heroicons/react/20/solid";
+import about1Img from "../../public/images/Home/about1.jpg";
+import about2Img from "../../public/images/Home/about2.jpg";
+import about3Img from "../../public/images/Home/about3.jpg";
+import about4Img from "../../public/images/Home/about4.jpg";
 
-import SampleImage from "../../public/images/Home/HomeMissionBanner.jpg";
+import { useState } from "react";
+
+const images = [about1Img, about2Img, about3Img, about4Img];
 
 export default function HomeTagline() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const handleNextImage = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setIsTransitioning(false);
+    }, 300); // Match with the transition duration
+  };
+
   return (
-    <div className="relative isolate overflow-hidden bg-accent2 px-6 py-6 sm:py-32 lg:overflow-visible lg:px-0">
+    <div className="relative isolate overflow-hidden px-6 py-6 sm:py-32 lg:overflow-visible lg:px-0">
       <div className="relative isolate px-8 lg:px-10">
         <div className="absolute inset-0 -z-10 overflow-hidden"></div>
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
@@ -76,12 +100,36 @@ export default function HomeTagline() {
               </div>
             </div>
           </div>
-          <div className="-ml-12 -mt-12 p-6 px-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-            <Image
-              alt=""
-              src={SampleImage}
-              className="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
-            />
+          <div className="-ml-12 -mt-12 p-6 px-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden relative drop-shadow-lg">
+            <div className="relative w-[50rem] aspect-[4/3] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 overflow-hidden">
+              <Image
+                alt=""
+                src={images[currentImageIndex]}
+                className={`object-cover transition-opacity duration-300 w-full h-full ${
+                  isTransitioning ? "opacity-0" : "opacity-100"
+                }`}
+              />
+            </div>
+
+            {/* Slide Tracker (Outside the Image but within Parent) */}
+            <div className="absolute flex space-x-2 p-3 rounded-full z-20">
+              {images.map((_, index) => (
+                <span
+                  key={index}
+                  className={`block w-2.5 h-2.5 rounded-full ${
+                    currentImageIndex === index ? "bg-links" : "bg-gray-400"
+                  } transition-colors duration-300`}
+                />
+              ))}
+            </div>
+
+            {/* Chevron Button (Outside the Image but within Parent) */}
+            <button
+              onClick={handleNextImage}
+              className="absolute top-1/2 -translate-y-1/2 ml-3 bg-background rounded-full hover:scale-105 transition-transform z-20"
+            >
+              <ChevronLeftIcon className="size-10 text-gray-400 hover:text-links" />
+            </button>
           </div>
         </div>
       </div>

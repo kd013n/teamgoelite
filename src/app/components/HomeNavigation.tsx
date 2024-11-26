@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import SampleImage from "../../public/images/Home/HomeMissionBanner.jpg";
+import careersImg from "../../public/images/Home/careers.jpg";
+import productsImg from "../../public/images/Home/products.jpg";
+import testimonialsImg from "../../public/images/Home/testimonials.jpg";
+import eventsImg from "../../public/images/Home/events.jpg";
+import aboutImg from "../../public/images/Home/about.jpg";
+import supportImg from "../../public/images/Home/support.jpg";
 
 const posts = [
   {
@@ -10,7 +15,7 @@ const posts = [
     href: "#",
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
-    imagesrc: SampleImage,
+    imagesrc: careersImg,
   },
   {
     id: 2,
@@ -18,7 +23,7 @@ const posts = [
     href: "#",
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
-    imagesrc: SampleImage,
+    imagesrc: productsImg,
   },
   {
     id: 3,
@@ -26,7 +31,7 @@ const posts = [
     href: "#",
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
-    imagesrc: SampleImage,
+    imagesrc: testimonialsImg,
   },
   {
     id: 4,
@@ -34,7 +39,7 @@ const posts = [
     href: "#",
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
-    imagesrc: SampleImage,
+    imagesrc: eventsImg,
   },
   {
     id: 5,
@@ -42,7 +47,7 @@ const posts = [
     href: "#",
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
-    imagesrc: SampleImage,
+    imagesrc: aboutImg,
   },
   {
     id: 6,
@@ -50,7 +55,7 @@ const posts = [
     href: "#",
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
-    imagesrc: SampleImage,
+    imagesrc: supportImg,
   },
 ];
 
@@ -76,7 +81,7 @@ export default function HomeNavigation() {
             <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
               Discover TGE
             </h2>
-            <p className="mt-3 md:mt-5 text-md leading-5 lg:text-lg lg:leading-8 text-midText">
+            <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-md leading-7 md:leading-8 text-midText">
               Learn how to grow your business with our expert advice.
             </p>
           </div>
@@ -84,12 +89,13 @@ export default function HomeNavigation() {
             {posts.map((post) => (
               <Link href={post.href} key={post.id}>
                 <article className="flex mx-auto max-w-xl flex-col items-start justify-between p-3 hover:scale-105 ease-linear duration-100">
-                  <div className="flex items-center rounded-xl border-inherit overflow-hidden object-cover mb-6">
+                  <div className="flex items-center rounded-xl border-inherit overflow-hidden object-cover mb-6 shadow-xl drop-shadow-lg">
                     <Image
                       src={post.imagesrc}
                       height={0}
                       width={0}
                       alt="Image"
+                      className="aspect-[6/3] object-cover"
                     />
                   </div>
                   <div className="group relative">

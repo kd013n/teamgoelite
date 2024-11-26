@@ -8,7 +8,7 @@ export default function CareersTravel() {
         <h2 className="text-center text-3xl font-semibold">
           Team <span className="text-links">Go</span> Elite
         </h2>
-        <p className="mx-auto max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+        <p className="text-balance text-center text-5xl font-semibold tracking-tight text-foreground sm:text-6xl">
           Travel Sense
         </p>
         <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
