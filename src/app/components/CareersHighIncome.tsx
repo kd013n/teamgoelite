@@ -1,9 +1,10 @@
-import { CheckIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 const tiers = [
   {
     id: "tier-gama",
     href: "/gama",
+    hrefname: "Testimonials",
     name: "GAMA",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, veritatis.",
@@ -12,7 +13,9 @@ const tiers = [
   {
     id: "tier-mdrt",
     href: "/mdrt",
+    hrefname: "Testimonials",
     href2: "/mdrt-mentoring",
+    href2name: "Mentoring Program",
     name: "MDRT",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, veritatis.",
@@ -21,6 +24,7 @@ const tiers = [
   {
     id: "tier-axaprime",
     href: "https://axa.com.ph/axaprime",
+    hrefname: "AXA Prime",
     name: "AXA Prime",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, veritatis.",
@@ -34,7 +38,7 @@ function classNames(...classes: string[]) {
 
 export default function CareersHighIncome() {
   return (
-    <div className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <div className="relative isolate bg-white px-6 py-24 sm:py-24 lg:px-8">
       <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl"
@@ -48,11 +52,11 @@ export default function CareersHighIncome() {
         />
       </div>
       <div className="mx-auto max-w-4xl text-center">
-        <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-foreground sm:text-6xl">
+        <p className="mt-2 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-6xl">
           High-Income Earners
         </p>
       </div>
-      <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">
+      <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-md font-medium text-gray-600 sm:text-xl/8">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quaerat
         placeat nihil libero animi autem odit error aspernatur vel.
       </p>
@@ -76,7 +80,7 @@ export default function CareersHighIncome() {
               <span
                 className={classNames(
                   tier.featured ? "text-white" : "text-gray-900",
-                  "text-5xl font-semibold tracking-tight"
+                  "text-3xl font-semibold tracking-tight"
                 )}
               >
                 {tier.name}
@@ -90,18 +94,32 @@ export default function CareersHighIncome() {
             >
               {tier.description}
             </p>
-            <a
+            <Link
               href={tier.href}
               aria-describedby={tier.id}
               className={classNames(
                 tier.featured
-                  ? "bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500"
+                  ? "bg-white/10 text-white shadow-sm hover:bg-white/20 focus-visible:outline-indigo-500"
                   : "text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline-indigo-600",
                 "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10"
               )}
             >
-              Get started today
-            </a>
+              {tier.hrefname}
+            </Link>
+            {tier.id === "tier-mdrt" && tier.href2 && (
+              <Link
+                href={tier.href2}
+                aria-describedby={tier.id}
+                className={classNames(
+                  tier.featured
+                    ? "bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500"
+                    : "text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline-indigo-600",
+                  "mt-2 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                )}
+              >
+                {tier.href2name}
+              </Link>
+            )}
           </div>
         ))}
       </div>
