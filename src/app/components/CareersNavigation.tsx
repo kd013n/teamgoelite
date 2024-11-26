@@ -211,7 +211,7 @@ export default function CareersNavigation() {
                 <h3 className="sr-only">Categories</h3>
                 <ul
                   role="list"
-                  className="space-y-1 text-sm font-medium text-darkText sticky top-24"
+                  className="space-y-1 text-sm font-medium text-darkText top-24"
                 >
                   {subCategories.map((category) => (
                     <li
