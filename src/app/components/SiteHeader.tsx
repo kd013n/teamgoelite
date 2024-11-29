@@ -103,6 +103,12 @@ const products = [
     icon: BanknotesIcon,
   },
   {
+    name: "Travel Insurance",
+    description: "Build strategic funnels that will convert",
+    href: "#",
+    icon: GlobeAsiaAustraliaIcon,
+  },
+  {
     name: "General Insurance",
     description: "Build strategic funnels that will convert",
     href: "#",

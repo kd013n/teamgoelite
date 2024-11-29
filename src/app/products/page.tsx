@@ -1,14 +1,14 @@
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import ProductsBanner from "../components/ProductsBanner";
-import ProductsNavigation from "../components/ProductsNavigation";
+import ProductsParent from "../components/ProductsParent";
 
 export default function Products() {
   return (
     <div>
       <SiteHeader />
       <ProductsBanner />
-      <ProductsNavigation />
+      <ProductsParent />
       <SiteFooter />
     </div>
   );

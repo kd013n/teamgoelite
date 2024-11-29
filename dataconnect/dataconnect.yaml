@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "teamgoelite"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "teamgoelite-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
