@@ -49,7 +49,7 @@ export default function HomeEthos() {
           className="mx-auto aspect-[1155/678] w-[72.1875rem] bg-gradient-to-t from-[#ca3333] to-[#9089fc] opacity-40"
         ></div>
       </div>
-      <div className="mx-auto max-w-4xl text-center">
+      <div className="mx-auto max-w-4xl text-center" id="HomeEthos">
         <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-foreground sm:text-6xl">
           The Team <span className="text-buttons">Go</span> Elite Ethos
         </p>

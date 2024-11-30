@@ -75,44 +75,44 @@ const products = [
   {
     name: "Health and Critical Illness",
     description: "Comprehensive health coverage for emergencies and illnesses.",
-    href: "#",
+    href: "/products/health",
     icon: HeartIcon,
   },
   {
     name: "Income Protection",
     description: "Secure your family's income during uncertain times.",
-    href: "#",
+    href: "/products/income",
     icon: CreditCardIcon,
   },
   {
     name: "Education",
     description: "Plan for your child's academic future today.",
-    href: "#",
+    href: "/products/education",
     icon: AcademicCapIcon,
   },
   {
     name: "Retirement",
     description: "Save now for a comfortable future lifestyle.",
-    href: "#",
+    href: "/products/retirement",
     icon: HomeIcon,
   },
   {
     name: "Savings and Investment",
     description: "Achieve financial goals with savings and investments.",
-    href: "#",
+    href: "/products/savings",
     icon: BanknotesIcon,
   },
   {
     name: "Travel Insurance",
     description:
       "Coverage for travel emergencies, cancellations, and belongings.",
-    href: "#",
+    href: "/products/travel",
     icon: GlobeAsiaAustraliaIcon,
   },
   {
     name: "General Insurance",
     description: "Protect assets with home, car, and business insurance.",
-    href: "#",
+    href: "/products/general",
     icon: PlusCircleIcon,
   },
 ];

@@ -80,7 +80,7 @@ export default function HomeBanner() {
                 Discover TGE
               </Link>
               <Link
-                href="#HomeMission"
+                href="#HomeEthos"
                 className="text-sm font-semibold leading-6 text-darkText"
               >
                 Our Ethos{" "}

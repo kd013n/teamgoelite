@@ -89,7 +89,7 @@ export default function ProductGrid({ initialCategory = "all" }) {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-white" id="ProductsGrid">
       <div className="mx-auto max-w-2xl px-12 py-16 sm:px-18 sm:py-24 lg:max-w-7xl lg:px-20">
         {/* Header and Category Dropdown */}
         <div className="flex items-center justify-between">

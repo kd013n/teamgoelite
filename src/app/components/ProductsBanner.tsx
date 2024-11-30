@@ -144,7 +144,7 @@ export default function ProductsBanner() {
                 </div>
               </div>
               <Link
-                href="#navigation"
+                href="#ProductsGrid"
                 className="inline-block rounded-md border border-transparent bg-buttons px-4 py-3 text-center font-medium text-white hover:bg-hoverButtons"
               >
                 Browse <ArrowRightIcon className="inline-block size-4 ml-1" />
