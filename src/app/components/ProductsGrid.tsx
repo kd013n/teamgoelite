@@ -12,7 +12,6 @@ import {
 import ProductModal from "./ProductsModal";
 import { Product } from "./ProductsTypes";
 import { products, categories } from "./ProductsList";
-import Link from "next/link";
 
 export default function ProductGrid({ initialCategory = "all" }) {
   const router = useRouter();
@@ -97,7 +96,6 @@ export default function ProductGrid({ initialCategory = "all" }) {
           <h2 className="text-2xl lg:text-4xl font-bold tracking-tight text-foreground">
             Explore Our Products
           </h2>
-          <Link href="/products/all">all</Link>
 
           <Menu as="div" className="relative inline-block text-left">
             <div>
