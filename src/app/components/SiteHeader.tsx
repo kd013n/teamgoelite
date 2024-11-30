@@ -68,49 +68,50 @@ const careers = [
 const products = [
   {
     name: "Overview",
-    description: "Preview of product solutions at Team Go Elite",
+    description: "Preview of product solutions at Team Go Elite.",
     href: "/products",
     icon: SquaresPlusIcon,
   },
   {
     name: "Health and Critical Illness",
-    description: "Get a better understanding of your traffic",
+    description: "Comprehensive health coverage for emergencies and illnesses.",
     href: "#",
     icon: HeartIcon,
   },
   {
     name: "Income Protection",
-    description: "Speak directly to your customers",
+    description: "Secure your family's income during uncertain times.",
     href: "#",
     icon: CreditCardIcon,
   },
   {
     name: "Education",
-    description: "Connect with third-party tools",
+    description: "Plan for your child's academic future today.",
     href: "#",
     icon: AcademicCapIcon,
   },
   {
     name: "Retirement",
-    description: "Build strategic funnels that will convert",
+    description: "Save now for a comfortable future lifestyle.",
     href: "#",
     icon: HomeIcon,
   },
   {
     name: "Savings and Investment",
-    description: "Build strategic funnels that will convert",
+    description: "Achieve financial goals with savings and investments.",
     href: "#",
     icon: BanknotesIcon,
   },
   {
     name: "Travel Insurance",
-    description: "Build strategic funnels that will convert",
+    description:
+      "Coverage for travel emergencies, cancellations, and belongings.",
     href: "#",
     icon: GlobeAsiaAustraliaIcon,
   },
   {
     name: "General Insurance",
-    description: "Build strategic funnels that will convert",
+    description: "Protect assets with home, car, and business insurance.",
     href: "#",
     icon: PlusCircleIcon,
   },
@@ -181,7 +182,9 @@ export default function SiteHeader() {
                         {item.name}
                         <span className="absolute inset-0" />
                       </a>
-                      <p className="mt-1 text-gray-600">{item.description}</p>
+                      <p className="mt-1 text-gray-600 text-xs">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -222,7 +225,9 @@ export default function SiteHeader() {
                         {item.name}
                         <span className="absolute inset-0" />
                       </a>
-                      <p className="mt-1 text-gray-600">{item.description}</p>
+                      <p className="mt-1 text-gray-600 text-xs">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 ))}

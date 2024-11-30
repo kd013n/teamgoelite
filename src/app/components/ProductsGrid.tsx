@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, Fragment } from "react";
 import Image from "next/image";
+import { useRouter } from "next/compat/router";
 import { Menu, Transition } from "@headlessui/react";
 import {
   ChevronDownIcon,
@@ -11,21 +12,45 @@ import {
 import ProductModal from "./ProductsModal";
 import { Product } from "./ProductsTypes";
 import { products, categories } from "./ProductsList";
+import Link from "next/link";
 
-export default function ProductGrid() {
+export default function ProductGrid({ initialCategory = "all" }) {
+  const router = useRouter();
   const itemsPerPage = 4;
+
+  // Client-side state and effects
+  const [isClient, setIsClient] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Ensure component only renders on the client
   useEffect(() => {
+    setIsClient(true);
+
     const handleResize = () => setIsMobile(window.innerWidth < 640);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Safer category change handler
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+
+    // Check if router is ready before navigation
+    if (router?.isReady) {
+      router.push(`/products/${category}`);
+    }
+  };
+
+  // If not client-side, return null to prevent SSR rendering issues
+  if (!isClient) {
+    return null;
+  }
 
   const filteredProducts =
     selectedCategory === "all"
@@ -64,19 +89,15 @@ export default function ProductGrid() {
     setIsModalOpen(false);
   };
 
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategory(category);
-    setCurrentPage(1);
-  };
-
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-12 py-16 sm:px-18 sm:py-24 lg:max-w-7xl lg:px-20">
         {/* Header and Category Dropdown */}
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-foreground">
+          <h2 className="text-2xl lg:text-4xl font-bold tracking-tight text-foreground">
             Explore Our Products
           </h2>
+          <Link href="/products/all">all</Link>
 
           <Menu as="div" className="relative inline-block text-left">
             <div>
@@ -84,9 +105,7 @@ export default function ProductGrid() {
                 {isMobile ? (
                   // Mobile view: only show icon
                   selectedCategory === "all" ? (
-                    <>
-                      <Squares2X2Icon className="size-5 mr-2 text-gray-600" />
-                    </>
+                    <Squares2X2Icon className="size-5 mr-2 text-gray-600" />
                   ) : (
                     (() => {
                       const categoryIcon = categories.find(
@@ -99,13 +118,8 @@ export default function ProductGrid() {
                         : null;
                     })()
                   )
-                ) : // Desktop view: show full text and icon
-                selectedCategory === "all" ? (
-                  <>
-                    <Squares2X2Icon className="size-5 mr-2 text-gray-600" />
-                    <span>All Products</span>
-                  </>
                 ) : (
+                  // Desktop view: show full text and icon
                   <span className="flex items-center">
                     {(() => {
                       const categoryIcon = categories.find(
@@ -121,12 +135,12 @@ export default function ProductGrid() {
                     {categories.find(
                       (category) => category.id === selectedCategory
                     )?.title || "Select Category"}
+                    <ChevronDownIcon
+                      className="ml-2 -mr-1 h-5 w-5"
+                      aria-hidden="true"
+                    />
                   </span>
                 )}
-                <ChevronDownIcon
-                  className="ml-2 -mr-1 h-5 w-5"
-                  aria-hidden="true"
-                />
               </Menu.Button>
             </div>
             <Transition

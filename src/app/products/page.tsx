@@ -8,7 +8,7 @@ export default function Products() {
     <div>
       <SiteHeader />
       <ProductsBanner />
-      <ProductsGrid />
+      <ProductsGrid initialCategory="all" />
       <SiteFooter />
     </div>
   );
