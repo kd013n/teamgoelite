@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { XMarkIcon, ArrowLeftIcon } from "@heroicons/react/20/solid";
+import { XMarkIcon } from "@heroicons/react/20/solid";
 import { Description, ModalView, type FormData } from "./CareersTypes";
 
-interface DescriptionModalProps {
+interface AppFormModalProps {
   isOpen: boolean;
-  description: Description | null;
+  appForm: Description | null;
   onClose: () => void;
 }
 
-const AppFormModal: React.AppFormProps> = ({
+const AppFormModal: React.FC<AppFormModalProps> = ({
   isOpen,
   appForm,
   onClose,
 }) => {
-  const [modalView, setModalView] = useState<ModalView>(ModalView.Description);
+  const [modalView, setModalView] = useState<ModalView>(ModalView.AppForm);
   const [formData, setFormData] = useState<FormData>({
     lastName: "",
     firstName: "",
@@ -23,7 +23,7 @@ const AppFormModal: React.AppFormProps> = ({
     sex: "",
     contactNumber: "",
     email: "",
-    position: description?.category?.title || "",
+    position: appForm?.category?.title || "",
     file: null,
   });
 
@@ -189,7 +189,7 @@ const AppFormModal: React.AppFormProps> = ({
     }
   };
 
-  if (!isOpen || !description) return null;
+  if (!isOpen || !appForm) return null;
 
   return (
     <Dialog open={isOpen} onClose={onClose}>
@@ -206,19 +206,8 @@ const AppFormModal: React.AppFormProps> = ({
                 </button>
               </div>
 
-              {modalView === ModalView.Form && (
+              {modalView === ModalView.AppForm && (
                 <>
-                  {/* Back Button positioned in the top left corner */}
-                  <div className="absolute top-0 left-0 p-4">
-                    <button
-                      type="button"
-                      onClick={() => setModalView(ModalView.ProductInfo)}
-                      className="text-gray-700 hover:text-buttons"
-                    >
-                      <ArrowLeftIcon className="size-6" aria-hidden="true" />
-                    </button>
-                  </div>
-
                   <h3 className="text-2xl md:text-3xl font-bold leading-6 text-gray-900 mt-10 pb-3 border-b border-gray-200">
                     Consult a Financial Adviser
                   </h3>
@@ -530,7 +519,7 @@ const AppFormModal: React.AppFormProps> = ({
                                 id="position"
                                 name="position"
                                 type="text"
-                                value={description?.name || "Not Available"}
+                                value={appForm?.name || "Not Available"}
                                 readOnly
                                 required
                                 className=" w-full rounded-md bg-gray-100 px-3 py-1.5 text-base text-gray-700 outline-none bg-opacity-50 cursor-not-allowed"
@@ -584,4 +573,4 @@ const AppFormModal: React.AppFormProps> = ({
   );
 };
 
-export default DescriptionModal;
+export default AppFormModal;

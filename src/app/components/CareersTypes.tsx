@@ -19,8 +19,15 @@ export interface Description {
   category?: { id: string; title: string };
 }
 
+export interface AppFormModalProps {
+  isOpen: boolean;
+  appForm: Description | null;
+  onClose: () => void;
+}
+
 export enum ModalView {
   AppForm = "appForm",
+  CareersInfo = "careersInfo",
   Confirmation = "confirmation",
 }
 

@@ -22,7 +22,7 @@ export const categories: Category[] = [
   { id: "mgDev", title: "Manager Development Program", icon: UsersIcon },
 ];
 
-export const description: Description[] = [
+export const descriptions: Description[] = [
   {
     id: 1,
     name: "Financial Advisers Hiring Program",
