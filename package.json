@@ -23,10 +23,10 @@
     "flowbite": "^2.5.2",
     "fontawesome": "^5.6.3",
     "headlessui": "^0.0.0",
-    "next": "14.2.14",
+    "next": "^14.2.14",
     "next-images": "^1.8.5",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "sass": "^1.79.4",
     "swr": "^2.2.5"
   },
@@ -47,5 +47,20 @@
     "typescript": "^5.6.3",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4"
-  }
+  },
+  "description": "Team Go Elite - Alpha Version <br />\r Frameworks/Tools: Next JS + Tailwind + Firebase <br />\r Version Code: v3.0 <br />\r Author: kd013n",
+  "main": "firebase.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kd013n/teamgoelite.git"
+  },
+  "keywords": [
+    "tge"
+  ],
+  "author": "kd013n",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kd013n/teamgoelite/issues"
+  },
+  "homepage": "https://github.com/kd013n/teamgoelite#readme"
 }

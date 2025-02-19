@@ -251,6 +251,7 @@ const products = [
     href: "#",
   },
 ];
+
 export default function ProductGrid() {
   const itemsPerPage = 4;
   const [currentPage, setCurrentPage] = useState(1);
