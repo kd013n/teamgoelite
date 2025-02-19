@@ -1,19 +1,13 @@
 import React, { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
-import { Description, ModalView, type FormData } from "./CareersTypes";
+import { ModalView, AppFormModalProps, type FormData } from "./CareersTypes";
 
-interface AppFormModalProps {
-  isOpen: boolean;
-  appForm: Description | null;
-  onClose: () => void;
-}
-
-const AppFormModal: React.FC<AppFormModalProps> = ({
+export default function AppFormModal({
   isOpen,
   appForm,
   onClose,
-}) => {
+}: AppFormModalProps) {
   const [modalView, setModalView] = useState<ModalView>(ModalView.AppForm);
   const [formData, setFormData] = useState<FormData>({
     lastName: "",
@@ -571,6 +565,4 @@ const AppFormModal: React.FC<AppFormModalProps> = ({
       </div>
     </Dialog>
   );
-};
-
-export default AppFormModal;
+}
