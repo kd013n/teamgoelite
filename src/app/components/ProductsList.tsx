@@ -29,7 +29,7 @@ export const products: Product[] = [
     imageSrc: SampleImage,
     category: { id: "health", title: "Health and Critical Illness" },
     description:
-      "Comprehensive worldwide health insurance offering up to ₱ 175 million coverage for various medical needs, ensuring peace of mind globally.",
+      "Comprehensive worldwide health insurance offering up to &#8369;175 million coverage for various medical needs, ensuring peace of mind globally.",
     href: "#",
   },
   {

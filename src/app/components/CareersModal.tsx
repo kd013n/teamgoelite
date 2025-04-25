@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
+<<<<<<< HEAD
 import {
   ModalView,
   AppFormModalProps,
   type FormData,
 } from "../components/CareersTypes";
+=======
+import { ModalView, AppFormModalProps, type FormData } from "./CareersTypes";
+>>>>>>> 8ce4a2a5f288518eb829830f61d64868a4ab9f15
 
 export default function AppFormModal({
   isOpen,

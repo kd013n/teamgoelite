@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Category, Description } from "../components/CareersTypes";
+=======
+import { Category, Description } from "./CareersTypes";
+>>>>>>> 8ce4a2a5f288518eb829830f61d64868a4ab9f15
 import SampleImage from "../../public/images/Home/HomeMissionBanner.jpg";
 import {
   BuildingOfficeIcon,
