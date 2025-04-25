@@ -36,7 +36,7 @@ const features = [
 
 export default function CareersBanner() {
   return (
-    <div className="bg-background py-24 sm:py-20">
+    <div className="bg-background min-h-[calc(100vh-6rem)] py-5 sm:py-0 flex items-center justify-center">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl lg:text-center">
           <h2 className="text-base/7 font-semibold text-links">
@@ -45,7 +45,7 @@ export default function CareersBanner() {
           <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-balance">
             Careers at Team <span className="text-buttons">Go</span> Elite
           </p>
-          <div className="mt-6 text-md md:text-base/7 text-gray-600">
+          <div className="mt-6 text-sm md:text-base/7 text-gray-600">
             <p>
               Our benefits are created to help all of our employees and enhance
               the operating environment. To encourage people, we ensure that
@@ -57,22 +57,26 @@ export default function CareersBanner() {
             </p>
           </div>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-18 lg:mt-16 lg:max-w-4xl">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-">
+        <div className="mx-auto mt-8 max-w-2xl sm:mt-18 lg:mt-16 lg:max-w-4xl">
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-6 lg:max-w-none lg:grid-cols-2 lg:gap-y-12">
             {features.map((feature) => (
-              <div key={feature.name} className="relative pl-16">
-                <dt className="text-md md:text-base/7 font-semibold text-gray-900">
-                  <div className="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-links">
+              <div key={feature.name} className="flex relative">
+                <div className="flex items-center justify-center">
+                  <div className="p-4 rounded-lg bg-links">
                     <feature.icon
                       aria-hidden="true"
                       className="size-6 text-white"
                     />
                   </div>
-                  {feature.name}
-                </dt>
-                <dd className="mt-2 text-sm md:text-md text-gray-600">
-                  {feature.description}
-                </dd>
+                </div>
+                <div className="pl-6">
+                  <dt className="text-md md:text-base/7 font-semibold text-gray-900">
+                    {feature.name}
+                  </dt>
+                  <dd className="mt-2 text-sm leading-4 line-clamp-2 md:text-md text-gray-600">
+                    {feature.description}
+                  </dd>
+                </div>
               </div>
             ))}
           </dl>

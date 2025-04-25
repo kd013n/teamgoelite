@@ -29,7 +29,7 @@ export const products: Product[] = [
     imageSrc: SampleImage,
     category: { id: "health", title: "Health and Critical Illness" },
     description:
-      "Comprehensive worldwide health insurance offering up to &#8369;175 million coverage for various medical needs, ensuring peace of mind globally.",
+      "Comprehensive worldwide health insurance offering up to ₱ 175 million coverage for various medical needs, ensuring peace of mind globally.",
     href: "#",
   },
   {
@@ -38,7 +38,7 @@ export const products: Product[] = [
     imageSrc: SampleImage,
     category: { id: "health", title: "Health and Critical Illness" },
     description:
-      "Affordable health plan covering hospitalization and emergencies up to &#8369;5 million, tailored to fit personal health and financial needs.",
+      "Affordable health plan covering hospitalization and emergencies up to ₱ 5 million, tailored to fit personal health and financial needs.",
     href: "#",
   },
   {
